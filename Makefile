@@ -74,3 +74,21 @@ docs:
 	# [WARNING] Run $ make website instead
 	${MAKE} website
 
+# Generate a release folder
+.PHONY: release
+release:
+	# Build css and icons packages
+	${MAKE} build pkg="siimple-css"
+	${MAKE} build pkg="siimple-colors"
+	${MAKE} build pkg="siimple-icons"
+	${MAKE} build pkg="siimple-experiments"
+	# Clean release folder and copy all folders
+	rm -rf release && mkdir release
+	cp -R packages/siimple-lib release/lib
+	cp -R packages/siimple-css release/css
+	cp -R packages/siimple-colors release/colors
+	cp -R packages/siimple-icons release/icons
+	cp -R packages/siimple-experiments release/experiments
+	cp -R packages/neutrine release/neutrine
+
+
