@@ -9,14 +9,16 @@
 @use "./variables.scss" as variables;
 @use "./functions.scss" as functions;
 @use "./utils.scss" as utils;
+@use "sass:string" as string;
 
 //Set text selection
 //Mixin by @icetee (PR #5) and edited by @dyzajash (PR #11)
 @mixin user-select ($select: "none") {
-    -webkit-user-select: $select;
-    -khtml-user-select: $select;
-    -moz-user-select: $select;
-    -ms-user-select: $select;
+    -webkit-user-select: string.unquote($select);
+    -khtml-user-select: string.unquote($select);
+    -moz-user-select: string.unquote($select);
+    -ms-user-select: string.unquote($select);
+    user-select: string.unquote($select);
 }
 
 //Alias for disabling user selection
