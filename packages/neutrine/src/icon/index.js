@@ -8,8 +8,8 @@ export const Icon = function (props) {
     //Update icon props
     Object.assign(newProps, {
         "className": helpers.classNames(props.className, {
-            "si": true,
-            ["si-" + props.icon]: props.icon !== ""
+            "siimple-icon": true,
+            ["siimple-icon-" + props.icon]: props.icon !== ""
         }),
         "style": helpers.styles({
             "fontSize": props.size,
