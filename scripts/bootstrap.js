@@ -15,10 +15,14 @@ fs.readdirSync(pkgsPath, "utf8").forEach(function (folder) {
     let packagePath = path.join(folderPath, "package.json");
     //Check if folder is not a directory
     if (fs.statSync(folderPath).isDirectory() === false || fs.existsSync(packagePath) === false) {
-        return null;
+        return null; //Skip
     }
     //Read the package.json file
     let localPkg = require(packagePath);
+    //Check if this package is not listed on public packages
+    if (typeof pkg.packages[localPkg.name] === "undefined") {
+        return null; //Skip this folder
+    }
     let name = localPkg.name.replace("@siimple/", "");
     //Create the symlink in node_modules folder
     fs.symlinkSync(folderPath, path.join(outputPath, name));
