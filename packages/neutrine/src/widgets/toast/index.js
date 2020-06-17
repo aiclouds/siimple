@@ -28,7 +28,7 @@ export class Toast extends React.Component {
         //Alert types
         this.error = this.error.bind(this);
         this.success = this.success.bind(this);
-        this.warning = this.wrarning.bind(this);
+        this.warning = this.warning.bind(this);
     }
     //Hide the toast
     close() {

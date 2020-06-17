@@ -4,7 +4,7 @@ import * as helpers from "../../helpers.js";
 //Button component
 export const Btn = function (props) {
     //Initialize the button props 
-    let newProps = helpers.filterProps(props, ["className", "color", "disabled", "fluid", "small"]);
+    let newProps = helpers.filterProps(props, ["className", "color", "disabled", "fluid", "small", "large"]);
     //Initialize the class names list 
     let classList = ["siimple-btn"];
     //Add the button color
