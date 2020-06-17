@@ -24,6 +24,10 @@ export const Btn = function (props) {
     if (props.small === true) {
         classList.push("siimple-btn--small");
     }
+    //Check the large property
+    if (props.large === true) {
+        classList.push("siimple-btn--large");
+    }
     //Append the provided class names
     newProps.className = helpers.classNames(classList, props.className);
     //Return the button element
@@ -36,6 +40,7 @@ Btn.defaultProps = {
     "disabled": false, 
     "fluid": false,
     "small": false,
+    "large": false,
     "content": null
 };
 
