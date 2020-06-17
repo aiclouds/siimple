@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {Alert, AlertClose} from "../../core/alert/index.js";
+import {Alert, AlertTitle, AlertClose} from "../../core/alert/index.js";
+import {classNames} from "../../helpers.js";
 
 //Import toast styles
 import "./style.scss";
@@ -24,10 +25,10 @@ export class Toast extends React.Component {
         //Bind some methods
         this.close = this.close.bind(this);
         this.show = this.show.bind(this);
-        //this.display = this.display.bind(this);
-        //this.displayError = this.displayError.bind(this);
-        //this.displayWarning = this.displayWarning.bind(this);
-        //this.displaySuccess = this.displaySuccess.bind(this);
+        //Alert types
+        this.error = this.error.bind(this);
+        this.success = this.success.bind(this);
+        this.warning = this.wrarning.bind(this);
     }
     //Hide the toast
     close() {
@@ -59,6 +60,18 @@ export class Toast extends React.Component {
             });
         });
     }
+    //Error alert
+    error(options) {
+        return this.show(Object.assign(options, {"type": "error"}));
+    }
+    //Warning alert
+    warning(options) {
+        return this.show(Object.assign(options, {"type": "warning"}));
+    }
+    //Success alert
+    success(options) {
+        return this.show(Object.assign(options, {"type": "success"}));
+    }
     //Build the alert element
     renderAlert() {
         let self = this;
@@ -68,24 +81,39 @@ export class Toast extends React.Component {
                 return self.close();
             }
         });
+        //TODO: build alert title
+        //Alert props
+        let alertProps = {
+            "color": this.state.color,
+            "className": "siimple--mb-0"
+        };
         //Return the alert component
-        return React.createElement(Alert, {"color": this.state.color}, alertClose, this.state.message);
+        return React.createElement(Alert, alertProps, alertClose, this.state.message);
     }
     render() {
         let self = this;
-        let toastClass = ["neutrine-toast", "neutrine-toast--" + this.props.position];
-        //Check if the toast is visible
-        if (this.state.visible === true) {
-            toastClass.push("neutrine-toast--visible");
-        }
+        //Build toast props
+        let toastProps = {
+            "style": {
+                "width": this.props.width,
+            },
+            "className": classNames({
+                "neutrine__toast": true,
+                //["neutrine__toast--" + this.props.position]: true,
+                ["neutrine__toast--" + this.props.aligned]: true,
+                "neutrine__toast--visible": this.state.visible === true
+            })
+        };
         //Return the toast component
-        return React.createElement("div", {"className": toastClass.join(" ")}, this.renderAlert());
+        return React.createElement("div", toastProps, this.renderAlert());
     }
 }
 
 //Toast default props
 Toast.defaultProps = {
-    "position": "bottom",
+    //"position": "bottom",
+    "width": "600px",
+    "aligned": "center", // left|center|right
     "cancellable": false,
     "timeout": 5000
 };
