@@ -100,7 +100,7 @@ export class Toast extends React.Component {
             "className": classNames({
                 "neutrine__toast": true,
                 //["neutrine__toast--" + this.props.position]: true,
-                ["neutrine__toast--" + this.props.aligned]: true,
+                ["neutrine__toast--" + this.props.align]: true,
                 "neutrine__toast--visible": this.state.visible === true
             })
         };
@@ -113,7 +113,7 @@ export class Toast extends React.Component {
 Toast.defaultProps = {
     //"position": "bottom",
     "width": "600px",
-    "aligned": "center", // left|center|right
+    "align": "center", // left|center|right
     "cancellable": false,
     "timeout": 5000
 };
