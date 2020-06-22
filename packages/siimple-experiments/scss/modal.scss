@@ -116,13 +116,13 @@ $modal-padding: 15px !default;
     }
     //Modal sizes
     &--small &-content {
-        max-width: siimple.breakpoint("small");
+        max-width: siimple.content("small");
     }
     &--medium &-content {
-        max-width: siimple.breakpoint("medium");
+        max-width: siimple.content("medium");
     }
     &--large &-content {
-        max-width: siimple.breakpoint("large");
+        max-width: siimple.content("large");
     }
 }
 
