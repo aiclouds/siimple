@@ -5,9 +5,9 @@
 // Website:    https://icons.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "./variables.scss" as variables;
-@use "./functions.scss" as icons;
+@use "../index.scss" as siimple;
+@use "./_variables.scss" as variables;
+@use "./_functions.scss" as icons;
 
 //Font face
 @font-face {

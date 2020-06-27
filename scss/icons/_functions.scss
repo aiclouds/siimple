@@ -7,7 +7,7 @@
 
 @use "sass:map";
 @use "sass:string" as str;
-@use "./icons.scss" as icons;
+@use "./_icons.scss" as icons;
 
 //Get list of icons names
 @function get-list() {
