@@ -6,9 +6,9 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "./variables.scss" as variables;
-@use "./lists.scss" as lists;
-@use "./utils.scss" as utils;
+@use "./_variables.scss" as variables;
+@use "./_lists.scss" as lists;
+@use "./_utils.scss" as utils;
 
 //Get a color from the color palette
 @function color ($color: "dark") {

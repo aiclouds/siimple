@@ -6,9 +6,9 @@
 // Website:    https://www.siimple.xyz
 //
 
-@forward "./scss/variables.scss";
-@forward "./scss/lists.scss";
-@forward "./scss/functions.scss";
-@forward "./scss/mixins.scss";
-@forward "./scss/utils.scss" as utils-*;
+@forward "./_variables.scss";
+@forward "./_lists.scss";
+@forward "./_functions.scss";
+@forward "./_mixins.scss";
+@forward "./_utils.scss" as utils-*;
 
