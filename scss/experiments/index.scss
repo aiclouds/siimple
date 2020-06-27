@@ -6,11 +6,8 @@
 // Website:    https://www.siimple.xyz
 //
 
-@forward "@siimple/lib"; //Forward lib variables
-
-//Import experiments
-@use "./scss/dropdown.scss";
-@use "./scss/modal.scss";
-@use "./scss/progress.scss";
-@use "./scss/steps.scss";
+@use "./dropdown.scss";
+@use "./modal.scss";
+@use "./progress.scss";
+@use "./steps.scss";
 
