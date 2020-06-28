@@ -13,7 +13,7 @@ let paths = {
 process.nextTick(function () {
     let options = getArgs().options;
     if (typeof options.output !== "string") {
-        return throw new Error("No output file provided");
+        throw new Error("No output file provided");
     }
     //Get all icons
     let files = fs.readdirSync(paths.iconsInput, "utf8").filter(function (file) {
