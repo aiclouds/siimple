@@ -6,7 +6,14 @@
 // Website:    https://www.siimple.xyz
 //
 
+//Import global modules
+@use "../common.scss";
+@use "../reset.scss";
+@use "../root.scss";
+
+//Import experimental modules
 @use "./dropdown.scss";
+@use "./media.scss";
 @use "./modal.scss";
 @use "./progress.scss";
 @use "./steps.scss";

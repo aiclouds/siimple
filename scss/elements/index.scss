@@ -6,7 +6,12 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Export all elements styles
+//Import global modules
+@use "../common.scss";
+@use "../reset.scss";
+@use "../root.scss";
+
+//Import all baseic elements modules
 @use "./alert.scss";
 @use "./breadcrumb.scss";
 @use "./btn.scss";

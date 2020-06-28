@@ -6,7 +6,10 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Export all form elements
+//Import global modules
+@use "../common.scss";
+
+//Import form modules
 @use "./checkbox.scss";
 @use "./field.scss";
 @use "./input.scss";
