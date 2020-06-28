@@ -6,7 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "./index.scss" as siimple;
 
 @mixin variables-from-list ($prefix, $list) {
     @each $key,$value in $list {

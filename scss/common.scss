@@ -6,16 +6,19 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "./variables.scss" as variables;
+@use "./index.scss" as siimple;
+
+//Body variables
+$body-bg: siimple.$white !default;
+$body-color: siimple.$dark !default;
 
 //Import font from Google Fonts
 @import url(#{siimple.$font-url});
 
 //Default html style
 html {
-    background-color: variables.$body-bg;
-    color: variables.$body-color; //text-color;
+    background-color: $body-bg;
+    color: $body-color; //text-color;
     font-family: siimple.$font-default;
     font-weight: siimple.$text-weight;
     font-size: siimple.$text-size;
