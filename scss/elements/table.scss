@@ -6,14 +6,13 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "../variables.scss" as variables;
+@use "../index.scss" as siimple;
 
 //Table cell variables
 $table-cell-padding: 15px !default;
 $table-cell-padding-small: 8px !default;
 $table-cell-padding-large: 25px !default;
-$table-cell-sizes: variables.$grid;
+$table-cell-sizes: siimple.$columns-values;
 $table-colors: (
     "primary": siimple.utils-lighten(siimple.color-lighter("primary"), 15%), 
     "secondary": siimple.utils-lighten(siimple.color-lighter("secondary"), 15%), 

@@ -7,9 +7,17 @@
 //
 
 //Export all elements styles
+@use "./alert.scss";
+@use "./breadcrumb.scss";
 @use "./btn.scss";
+@use "./card.scss";
+@use "./list.scss";
+@use "./menu.scss";
 @use "./rule.scss";
 @use "./spinner.scss";
+@use "./table.scss";
+@use "./tabs.scss";
 @use "./tag.scss";
 @use "./tip.scss";
+@use "./typography.scss";
 

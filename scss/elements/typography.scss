@@ -1,0 +1,156 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "../index.scss" as siimple;
+
+//Blockquote class
+.#{siimple.$prefix}blockquote {
+    display: block;
+    //font-family: $siimple-default-text-font;
+    color: siimple.color-lighter("dark");
+    //font-size: $siimple-default-font-size;
+    //line-height: $siimple-default-line-height;
+    border-left: 4px solid siimple.color-lighter("dark");
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    padding-left: 20px;
+    margin-bottom: siimple.$margin-bottom;
+    //Fix default margin values in blockquote element
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+//Code variables
+$code-text-size: 14px !default;
+$code-line-height: 21px !default;
+$code-color: siimple.color("error") !default;
+$code-padding: 3px !default;
+
+//Code class
+.#{siimple.$prefix}code {
+    color: $code-color;
+    text-decoration: none;
+    line-height: $code-line-height;
+    font-size: $code-text-size;
+    font-weight: siimple.$weight-bold;
+    font-family: siimple.$font-monospace;
+    padding-left: $code-padding;
+    padding-right: $code-padding;
+    word-wrap: break-word;
+    //text-size-adjust: 100%;
+}
+
+//Headings default variables
+$-heading-margin-top: 30px !default;
+$heading-margin-bottom: 0.5em !default;
+$heading-line-height: siimple.$line-height !default;
+$heading-font-weight: siimple.$weight-bold !default;
+$heading-values: ("1": 40px, "2": 32px, "3": 28px, "4": 24px, "5": 20px, "6": 16px) !default;
+
+//Heading class
+.#{siimple.$prefix}h {
+    @each $name,$value in $headings-values {
+        &#{$name} {
+            display: block;
+            font-size: $value; //siimple.utils-get($heading, "size");
+            font-weight: $heading-font-weight;
+            line-height: $heading-line-height;
+            padding: 0px;
+            margin-bottom: $heading-margin-bottom;
+            &:not(:first-child) {
+                margin-top: $heading-margin-top; //siimple.utils-get($heading, "margin-top");
+            }
+        }
+    }
+}
+
+//Lead variables
+$lead-text-size: siimple.$text-size-large !default;
+$lead-line-height: siimple.$line-height !default;
+$lead-color: siimple.color-lighter("dark") !default;
+
+//Paragraph lead class
+.#{siimple.$prefix}lead {
+    display: block;
+    font-size: $lead-text-size;
+    line-height: $lead-line-height;
+    font-weight: siimple.$weight-bold;
+    color: $lead-color;
+    margin-top: 0px;
+    margin-bottom: siimple.$margin-bottom;
+}
+
+//Link variables
+$link-color: siimple.color("primary");
+$link-color-hover: siimple.color-darker("primary");
+
+//Link class
+.#{siimple.$prefix}link {
+    color: $link-color;
+    text-decoration: none;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+        color: $link-color-hover;
+        transition: color 0.3s;
+    }
+}
+
+//Paragraph class
+.#{siimple.$prefix}paragraph, 
+.#{siimple.$prefix}p {
+    display: block;
+    margin-top: 0px;
+    margin-bottom: siimple.$margin-bottom;
+}
+
+//Pre vriables
+$pre-text-size: 13px !default;
+$pre-line-height: 18px !default;
+$pre-padding-left: 20px !default;
+$pre-padding-right: 20px !default;
+$pre-padding-top: 15px !default;
+$pre-padding-bottom: 15px !default;
+$pre-color: siimple.color("dark") !default; //siimple.color("white");
+$pre-background: siimple.color("light") !default; //siimple.color("dark");
+
+//Pre class
+.#{siimple.$prefix}pre {
+    display: block;
+    overflow-x: auto;
+    width: calc(100% - #{$pre-padding-left} - #{$pre-padding-right});
+    color: $pre-color;
+    line-height: $pre-line-height;
+    font-size: $pre-text-size;
+    font-family: siimple.$font-monospace;
+    background-color: $pre-background;
+    border-radius: siimple.$border-radius;
+    padding-top: $pre-padding-top;
+    padding-bottom: $pre-padding-bottom;
+    padding-left: $pre-padding-left;
+    padding-right: $pre-padding-right;
+    margin-bottom: siimple.$margin-bottom;
+    margin-top: 0px;
+    //Pre dark mode
+    //&--dark {
+    //    background-color: siimple.color("dark") !important;
+    //    color: siimple.color("white");
+    //}
+}
+
+//Small text variables
+$small-text-size: siimple.$text-size-small !default;
+$small-color: siimple.color-lighter("dark") !default;
+
+//Small class
+.#{siimple.$prefix}small {
+    font-size: $small-text-size;
+    color: $small-color;
+}
+
