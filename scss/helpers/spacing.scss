@@ -1,0 +1,50 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "../index.scss" as siimple;
+
+//Spacing variables
+$spacing-positions: ("t": "top", "b": "bottom", "l": "left", "r": "right") !default;
+$spacing-horizontal: true !default; //Allow horizontal spacing (x)
+$spacing-vertical: true !default; //Allow vertical spacing (y)
+$spacing-shortcuts: ("m": "margin", "p": "padding") !default;
+$spacing-values: ("0": 0px, "1": 5px, "2": 10px, "3": 15px, "4": 25px, "5": 45px) !default;
+
+//Spacing class
+.#{siimple.$prefix-helpers} {
+    @each $sk,$sv in $spacing-shortcuts {
+        @each $vk,$vv in $spacing-values {
+            //Check for adding horizontal spacings
+            @if $spacing-horizontal == true {
+                &#{$sk}x-#{$vk} {
+                    margin-left: $vv !important;
+                    margin-right: $vv !important;
+                }
+            }
+            //Check for adding vertical spacings
+            @if $spacing-vertical == true {
+                &#{$sk}y-#{$vk} {
+                    margin-top: $vv !important;
+                    margin-bottom: $vv !important;
+                }
+            }
+            //Add positions
+            @each $pk,$pv in $spacing-positions {
+                &#{$sk}#{$pk}-#{$vk} {
+                    #{$sv}-#{$pv}: $vv !important;
+                }
+            }
+        }
+    }
+    //Margin auto
+    &mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
