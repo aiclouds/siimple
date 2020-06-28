@@ -6,13 +6,12 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "../variables.scss" as variables;
+@use "../index.scss" as siimple;
 
 //Grid variables
 //$column-margin: 10px;
 $column-padding: 10px;
-$column-sizes: variables.$grid;
+$column-sizes: siimple.$columns-values;
 
 //Grid column class
 .#{siimple.$name}-column {
