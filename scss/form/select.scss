@@ -6,33 +6,36 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "../index.scss" as siimple;
 
-//Textarea variables
-$textarea-padding: 15px;
-$textarea-text-size: 15px;
-$textarea-line-height: 22px;
+//Select variables
+$select-padding: 15px;
+$select-height: 40px;
+$select-text-size: 15px; //siimple.$text-size;
 
-//Textarea class
-.#{siimple.$prefix}textarea {
+//Select class
+.#{siimple.$prefix}select {
     display: inline-block;
-    line-height: $textarea-line-height;
-    font: inherit; //Important
-    font-size: $textarea-text-size;
+    height: $select-height;
+    line-height: $select-height;
+    font-size: $select-text-size;
+    font-weight: normal;
     color: siimple.$text-color;
-    padding: $textarea-padding;
+    padding-left: $select-padding;
+    padding-right: $select-padding;
+    //padding-top: 0px;
+    //padding-bottom: 0px;
     border: 0px;
     border-radius: siimple.$border-radius;
     outline: 0px;
     background-color: siimple.color("light");
     vertical-align: top;
     box-sizing: border-box;
-    resize: vertical;
-    //Fluid textarea
+    //Fluid select
     &--fluid {
         width: 100%;
     }
-    //Dark textarea style
+    //Dark select style
     &--dark {
         background-color: siimple.color("dark");
         color: siimple.color("white");

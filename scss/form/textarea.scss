@@ -3,39 +3,36 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    https://wwww.siimple.xyz
+// Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "../index.scss" as siimple;
 
-//Input variables
-$input-height: 40px;
-$input-text-size: 15px;
-$input-padding: 15px;
+//Textarea variables
+$textarea-padding: 15px;
+$textarea-text-size: 15px;
+$textarea-line-height: 22px;
 
-//Input style
-.#{siimple.$prefix}input {
+//Textarea class
+.#{siimple.$prefix}textarea {
     display: inline-block;
-    height: $input-height;
-    line-height: $input-height;
-    font-size: $input-text-size;
-    font-weight: normal;
+    line-height: $textarea-line-height;
+    font: inherit; //Important
+    font-size: $textarea-text-size;
     color: siimple.$text-color;
-    padding-left: $input-padding;
-    padding-right: $input-padding;
-    padding-top: 0px;
-    padding-bottom: 0px;
+    padding: $textarea-padding;
     border: 0px;
     border-radius: siimple.$border-radius;
     outline: 0px;
     background-color: siimple.color("light");
     vertical-align: top;
     box-sizing: border-box;
-    //Fluid input
+    resize: vertical;
+    //Fluid textarea
     &--fluid {
         width: 100%;
     }
-    //Dark input
+    //Dark textarea style
     &--dark {
         background-color: siimple.color("dark");
         color: siimple.color("white");

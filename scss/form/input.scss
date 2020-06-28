@@ -3,39 +3,39 @@
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
-// Website:    https://www.siimple.xyz
+// Website:    https://wwww.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "../index.scss" as siimple;
 
-//Select variables
-$select-padding: 15px;
-$select-height: 40px;
-$select-text-size: 15px; //siimple.$text-size;
+//Input variables
+$input-height: 40px;
+$input-text-size: 15px;
+$input-padding: 15px;
 
-//Select class
-.#{siimple.$prefix}select {
+//Input style
+.#{siimple.$prefix}input {
     display: inline-block;
-    height: $select-height;
-    line-height: $select-height;
-    font-size: $select-text-size;
+    height: $input-height;
+    line-height: $input-height;
+    font-size: $input-text-size;
     font-weight: normal;
     color: siimple.$text-color;
-    padding-left: $select-padding;
-    padding-right: $select-padding;
-    //padding-top: 0px;
-    //padding-bottom: 0px;
+    padding-left: $input-padding;
+    padding-right: $input-padding;
+    padding-top: 0px;
+    padding-bottom: 0px;
     border: 0px;
     border-radius: siimple.$border-radius;
     outline: 0px;
     background-color: siimple.color("light");
     vertical-align: top;
     box-sizing: border-box;
-    //Fluid select
+    //Fluid input
     &--fluid {
         width: 100%;
     }
-    //Dark select style
+    //Dark input
     &--dark {
         background-color: siimple.color("dark");
         color: siimple.color("white");
