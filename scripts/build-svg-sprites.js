@@ -3,11 +3,7 @@ let path = require("path");
 let svgo = require("svgo");
 let svgstore = require("svgstore");
 let getArgs = require("get-args");
-
-//Paths
-let paths = {
-    "iconsInput": path.resolve(__dirname, "../icons")
-};
+let paths = require("./paths.js");
 
 //Build the svg sprite
 process.nextTick(function () {
@@ -16,7 +12,7 @@ process.nextTick(function () {
         throw new Error("No output file provided");
     }
     //Get all icons
-    let files = fs.readdirSync(paths.iconsInput, "utf8").filter(function (file) {
+    let files = fs.readdirSync(paths.iconsFolder, "utf8").filter(function (file) {
         return path.extname(file) === ".svg"; //Get only .svg files
     });
     //Sprites storage
@@ -28,7 +24,7 @@ process.nextTick(function () {
         }
         //Get current file
         let file = files[index];
-        let content = fs.readFileSync(path.join(paths.iconsInput, file), "utf8");
+        let content = fs.readFileSync(path.join(paths.iconsFolder, file), "utf8");
         //Initialize the svg minimize
         let prefix = path.basename(file, path.extname(file));
         let svgmin = new svgo({plugins: [{cleanupIDs: {prefix: prefix + '-', minify: true}}]});
