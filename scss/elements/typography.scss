@@ -47,7 +47,7 @@ $code-padding: 3px !default;
 }
 
 //Headings default variables
-$-heading-margin-top: 30px !default;
+$heading-margin-top: 30px !default;
 $heading-margin-bottom: 0.5em !default;
 $heading-line-height: siimple.$line-height !default;
 $heading-font-weight: siimple.$weight-bold !default;
@@ -55,7 +55,7 @@ $heading-values: ("1": 40px, "2": 32px, "3": 28px, "4": 24px, "5": 20px, "6": 16
 
 //Heading class
 .#{siimple.$prefix}h {
-    @each $name,$value in $headings-values {
+    @each $name,$value in $heading-values {
         &#{$name} {
             display: block;
             font-size: $value; //siimple.utils-get($heading, "size");
