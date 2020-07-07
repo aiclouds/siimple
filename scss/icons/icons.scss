@@ -1,0 +1,42 @@
+//
+// @siimple/icons: A suite of scalable icons for web, desktop and mobile projects
+// License:    MIT License 
+// Repository: https://github.com/siimple/siimple
+// Website:    https://icons.siimple.xyz
+//
+
+@use "../index.scss" as siimple;
+
+//Font face
+@font-face {
+    font-family: siimple.$icons-font-name;
+    src: url(siimple.$icons-font-url-ttf) format("truetype"),
+    url(siimple.$icons-font-url-woff) format("woff"),
+    url(siimple.$icons-font-url-woff2) format("woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+
+//Icon class
+.#{siimple.$prefix}icon {
+    display: inline-block;
+    font-family: siimple.$icons-font-name;
+    font-size: siimple.$icons-font-size;
+    line-height: normal;
+    font-weight: normal !important;
+    font-style: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    &::before {
+        box-sizing: inherit;
+    }
+    //For each icon in the list
+    @each $name in siimple.utils-keys(siimple.$icons-list) {
+        &-#{$name}:before {
+            content: siimple.use-icon($name);
+        }
+    }
+}
+
+

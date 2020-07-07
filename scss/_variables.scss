@@ -111,5 +111,11 @@ $columns-values: (
     "12": "99.99%"
 ) !default;
 
+//Icons variables
+$icons-font-name: "siimple-icons" !default;
+$icons-font-url-ttf: "./fonts/siimple-icons.font.ttf" !default;
+$icons-font-url-woff: "./fonts/siimple-icons.font.woff" !default;
+$icons-font-url-woff2: "./fonts/siimple-icons.font.woff2" !default;
+$icons-font-size: $text-size !default;
 
 

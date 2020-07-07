@@ -6,9 +6,12 @@
 // Website:    https://www.siimple.xyz
 //
 
+@use "sass:string";
+
 @use "./_variables.scss" as variables;
 @use "./_lists.scss" as lists;
 @use "./_utils.scss" as utils;
+@use "./_icons.scss" as icons;
 
 //Get a color from the color palette
 @function color ($color: "dark") {
@@ -57,6 +60,16 @@
 @function gray ($name) {
     $name: "gray" + utils.utils-replace($name, "gray", "");
     @return utils.utils-get(lists.$grays, $name);
+}
+
+//Get a single icon by name
+@function icon ($name) {
+    @return utils.utils-get(icons.$icons-list, "#{$name}");
+}
+
+//Use an icon by name
+@function use-icon($name) {
+    @return string.unquote("\"") + string.unquote(string.insert(icon($name), "\\", 1)) + string.unquote("\"");
 }
 
 
