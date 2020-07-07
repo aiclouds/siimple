@@ -3,7 +3,7 @@ let path = require("path");
 let svgo = require("svgo");
 let svgstore = require("svgstore");
 let getArgs = require("get-args");
-let paths = require("./paths.js");
+let paths = require("../config/paths.js");
 
 //Build the svg sprite
 process.nextTick(function () {

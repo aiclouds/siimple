@@ -3,7 +3,7 @@ let path = require("path");
 let SVGIcons2SVGFontStream = require("svgicons2svgfont");
 let getArgs = require("get-args");
 let utils = require("./utils.js");
-let paths = require("./paths.js");
+let paths = require("../config/paths.js");
 
 //Build the SVG font
 process.nextTick(function () {
