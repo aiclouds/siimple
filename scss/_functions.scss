@@ -17,25 +17,25 @@
         @return variables.$white;
     }
     //Return the base color from the list of colors
-    @return utils.get(lists.$colors, "#{$color}");
+    @return utils.utils-get(lists.$colors, "#{$color}");
 }
 
 //Make a color darker
 @function color-darker ($color: "dark") {
-    @return utils.darken(color($color), variables.$darker-amount);
+    @return utils.utils-darken(color($color), variables.$darker-amount);
 }
 
 //Make a color lighter
 @function color-lighter ($color: "dark") {
-    @return utils.lighten(color($color), variables.$lighter-amount);
+    @return utils.utils-lighten(color($color), variables.$lighter-amount);
 }
 
 //Invert a color
 @function color-invert ($color) {
-    @if utils.is-string($color) == true {
+    @if utils.utils-is-string($color) == true {
         $color: color($color); //Get siimple color
     }
-    @if utils.luminance($color) > 0.55 {
+    @if utils.utils-luminance($color) > 0.55 {
         @return variables.$dark; //Return dark color
     } @else {
         @return variables.$white; //Default: white color
@@ -44,19 +44,19 @@
 
 //Get a breakpoint value by name
 @function breakpoint ($name) {
-    @return utils.get(lists.$breakpoints, $name);
+    @return utils.utils-get(lists.$breakpoints, $name);
 }
 
 //Get a content size by name
 @function content ($name) {
-    @return utils.get(lists.$contents, $name);
+    @return utils.utils-get(lists.$contents, $name);
 }
 
 //Get a gray color
 //Usage: gray("1") or gray("gray1")
 @function gray ($name) {
-    $name: "gray" + utils.replace($name, "gray", "");
-    @return utils.get(lists.$grays, $name);
+    $name: "gray" + utils.utils-replace($name, "gray", "");
+    @return utils.utils-get(lists.$grays, $name);
 }
 
 

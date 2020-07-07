@@ -9,7 +9,7 @@
 @use "./_variables.scss" as variables;
 @use "./_functions.scss" as functions;
 @use "./_utils.scss" as utils;
-@use "sass:string" as string;
+@use "sass:string";
 
 //Set text selection
 //Mixin by @icetee (PR #5) and edited by @dyzajash (PR #11)
@@ -64,7 +64,7 @@
 //Sizing mixin
 @mixin content-size ($size: 0px) {
     //Check for string size
-    @if utils.is-string($size) == true {
+    @if utils.utils-is-string($size) == true {
         $size: functions.content($size); //Get the content size
     }
     //Apply the provided size only in screen widts > $size
