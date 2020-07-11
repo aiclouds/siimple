@@ -11,5 +11,5 @@ test:
 # Publish the package
 .PHONY: publish
 publish:
-	npm publish --access public
+	npm publish
 

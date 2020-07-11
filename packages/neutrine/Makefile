@@ -1,18 +1,15 @@
-.PHONY: build test docs
-
-# Global variables
-NODE_BIN=../../node_modules/.bin
-
 # Build neutrine source
-build:
-	${NODE_BIN}/webpack --config webpack.config.js
+.PHONY: build
+build: 
+	# NOT_AVAILABLE: run 'make build' to compile neutrine.
 
-# Run test service
+# Run tests
+.PHONY: test
 test:
-	@## Run test script for creating the testing server using express
-	node test/server.js
+	# NOT AVAILABLE: tests are available at the 'test' folder.
 
-# Publish package
+# Publish the package
+.PHONY: publish
 publish:
-	npm publish --access public
+	npm publish
 
