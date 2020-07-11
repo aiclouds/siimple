@@ -1,20 +1,22 @@
-# @siimple/icons
+# siimple-icons
 
 > **siimple icons** is a suite of scalable icons for web, desktop and mobile projects.
 
-[![npm](https://img.shields.io/npm/v/@siimple/icons.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/icons)
-[![npm](https://img.shields.io/npm/dt/@siimple/icons.svg?style=flat-square)](https://www.npmjs.com/package/@siimple-icons)
-[![](https://data.jsdelivr.com/v1/package/npm/@siimple/icons/badge)](https://www.jsdelivr.com/package/npm/@siimple/icons)
-[![npm](https://img.shields.io/npm/l/@siimple/icons.svg?style=flat-square)](https://github.com/siimple/siimple)
+[![npm](https://img.shields.io/npm/v/siimple-icons.svg?style=flat-square)](https://www.npmjs.com/package/siimple-icons)
+[![npm](https://img.shields.io/npm/dt/siimple-icons.svg?style=flat-square)](https://www.npmjs.com/package/siimple-icons)
+[![](https://data.jsdelivr.com/v1/package/npm/siimple-icons/badge)](https://www.jsdelivr.com/package/npm/siimple-icons)
+[![npm](https://img.shields.io/npm/l/siimple-icons.svg?style=flat-square)](https://github.com/siimple/siimple)
 [![twitter](https://img.shields.io/badge/Twitter-%40siimplecss-blue.svg?style=flat-square)](https://twitter.com/siimplecss)
 [![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
+
+:construction: This package is currently under development. **Use it at your own risk**.
 
 ## Installation 
 
 Use [npm](https://npmjs.com) to install the latest version of **siimple icons**:
 
 ```
-npm install @siimple/icons --save
+npm install siimple-icons --save
 ```
 
 
@@ -29,15 +31,16 @@ dist/
 │   ├── siimple-icons.font.ttf
 │   ├── siimple-icons.font.woff
 │   └── siimple-icons.font.woff2
+├── svg
+│   └── siimple-icons.svg
 ├── siimple-icons.css
 ├── siimple-icons.css.map
-├── siimple-icons.min.css
-└── siimple-icons.svg
+└── siimple-icons.min.css
 ```
 
 - A file called `siimple-icons.css`. It contains all styles that you will need when using **siimple icons**.
 - A folder called `fonts`. It contains all of the typeface files used by `siimple-icons.css`.
-- A file called `siimple-icons.svg`. Is a SVG sprite with all the icons.
+- A folder called `svg`. Is contains a SVG sprite with all the icons.
 
 
 ### Using the CSS styles
@@ -52,15 +55,15 @@ Remember that you should change the path `./assets/siimple-icons.css` used in th
 
 To use the icons in the `<body>` tag of your HTML file, first create a `<span>` tag with the following classes: 
 
-- `si`: is the base class for **siimple icons**.
-- `si-[ICON]`, where `[ICON]` is the name of the icon that you are going to add.  
+- `siimple-icon`: is the base class for **siimple icons**.
+- `siimple-icon-[ICON]`, where `[ICON]` is the name of the icon that you are going to add.  
 
 ```html 
 <!-- Add a left arrow icon -->
-<span class="si si-arrow-left"></span>
+<span class="siimple-icon siimple-icon-arrow-left"></span>
 
 <!-- Add a star icon -->
-<span class="si si-star"></span>
+<span class="siimple-icon siimple-icon-star"></span>
 ```
 
 You can style your icons adding a `style` attribute or adding an additional class with your custom styles: 
@@ -74,13 +77,13 @@ You can style your icons adding a `style` attribute or adding an additional clas
     }
 </style>
 
-<span class="si si-star yellow-star"></span>
+<span class="siimple-icon siimple-icon-star yellow-star"></span>
 ```
 
 
 ### Using the SVG sprite
 
-You should copy `siimple-icons.svg` into the assets folder of your project. Now, in your HTMl document where you are going to use an icon, create a `<svg>` element and add the following information to it:
+You should copy `svg/siimple-icons.svg` into the assets folder of your project. Now, in your HTMl document where you are going to use an icon, create a `<svg>` element and add the following information to it:
 
 - Add a `viewbox="0 0 48 48"` attribute.
 - **Optionally** add a `class` attrbitue with the class (or classes) used to style your icon. See the example below.
@@ -114,5 +117,5 @@ You can also style your icon adding a class to the parent `<svg>` tag with your 
 
 ## License 
 
-All the icons in **siimple icons** are under the [MIT](../../LICENSE) license. &copy; The **siimple team**.
+All the icons in **siimple icons** are under the [MIT](LICENSE) license. &copy; The **siimple team**.
 
