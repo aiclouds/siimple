@@ -37,7 +37,7 @@ Here is a full navbar example:
 
 #### Color
 
-Costomize the navbar adding one of the siimple colors described in the [theming page](/css/getting-started/theming.html).
+Costomize the navbar adding one of the siimple colors described in the [theming page](../getting-started/theming.html).
 
 ```html
 <div class="siimple-navbar siimple-navbar--primary">

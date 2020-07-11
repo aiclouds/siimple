@@ -12,7 +12,7 @@ colors:
   - className: "siimple--text-muted"
 ---
 
-In this document you can find useful classes to style your text. You can combine these classes with our [typography](/css/typography/index.html) elements to easily style your content.
+In this document you can find useful classes to style your text. You can combine these classes with our [typography](../elements/typography.html) elements to easily style your content.
 
 #### Text alignment
 

@@ -12,7 +12,7 @@ Buttons are essential elements in any website or application for **actions**. Th
 
 #### Colored buttons
 
-You can set the button color by adding a `siimple-btn--[COLOR]` class to the button. Check the list of the available colors in the [theming section](/css/getting-started/theming.html).
+You can set the button color by adding a `siimple-btn--[COLOR]` class to the button. Check the list of the available colors in the [theming section](../getting-started/theming.html).
 
 ```html preview="true"
 <button class="siimple-btn siimple-btn--primary siimple--mb-1">

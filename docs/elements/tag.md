@@ -13,7 +13,7 @@ description: "Small labelling element"
 
 #### Colors
 
-You can use all the different colors specified in the [theming](/css/getting-started/theming.html) section.
+You can use all the different colors specified in the [theming](../getting-started/theming.html) section.
 
 ```html preview="true"
 <span class="siimple-tag siimple-tag--primary">Primary tag</span>
