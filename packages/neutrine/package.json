@@ -1,10 +1,13 @@
 {
-    "name": "@siimple/neutrine",
+    "name": "neutrine",
     "description": "A collection of React UI components based on siimple",
     "version": "0.1.5",
     "author": "Josemi Juanes <josemijuanes@gmail.com>",
     "license": "MIT",
-    "main": "index.js",
+    "main": "dist/neutrine.umd.js",
+    "module": "dist/neutrine.esm.js",
+    "jsdelivr": "dist/neutrine.umd.js",
+    "style": "dist/neutrine.css",
     "homepage": "https://www.siimple.xyz/",
     "repository": "https://github.com/siimple/siimple",
     "bugs": "https://github.com/siimple/siimple/issues",
@@ -15,15 +18,10 @@
         "design",
         "react"
     ],
-    "files": [
-        "src",
-        "index.js"
-    ],
+    "files": ["dist"],
     "dependencies": {
-        "@siimple/lib": "^0.0.1",
-        "@siimple/css": "^4.0.0-rc",
-        "@siimple/experiments": "^0.0.2",
-        "@siimple/icons": "^0.0.3",
-        "react": "^16.8.6"
+        "siimple": "^0.0.1",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6"
     }
 }
