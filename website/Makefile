@@ -4,13 +4,13 @@ node_bin=../node_modules/.bin
 # Build the website
 .PHONY: build
 build:
-	mkdir -p ./www
+	rm -rf ./www
+	mkdir -p ./www ./www/assets ./www/docs
 	@# Build website pages
 	node ./scripts/build.js
 	@# Build assets
-	mkdir -p ./www/assets
-	${node_bin}/sass -I ../node_modules ./styles/index.scss ./www/assets/style.css
-	cp ../packages/siimple-css/dist/siimple.min.css ./www/assets/
+	${node_bin}/sass --no-source-map -I ../node_modules ./styles/index.scss ./www/assets/style.css
+	cp ../packages/siimple/dist/siimple.min.css ./www/assets/
 	cp ../packages/siimple-icons/dist/siimple-icons.min.css ./www/assets/
 	cp -R ../packages/siimple-icons/dist/fonts ./www/assets/
 	@# Copy images 

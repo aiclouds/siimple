@@ -1,25 +1,25 @@
 let fs = require("fs");
 let path = require("path");
-let template = require("../../commons/template.js");
-let virtualFile = require("../../commons/virtual-file.js");
-let util = require("../../commons/util.js");
-let walkdir = require("../../commons/walkdir.js");
+let paths = require("../../config/paths.js");
 
-let paths = require("./paths.js");
+let template = require("./template.js");
+let virtualFile = require("./utils/virtual-file.js");
+let util = require("./utils/util.js");
+let walkdir = require("./utils/walkdir.js");
 
 //Build website pages
 module.exports = function (config, data) {
     //Initialize page template
     let pageTemplate = template.page({
         "header": config.header,
-        "body": fs.readFileSync(path.join(paths.layouts, "default.html"), "utf8")
+        "body": fs.readFileSync(path.join(paths.websiteLayouts, "default.html"), "utf8")
     });
     let compilePageTemplate = function (content) {
         return pageTemplate.replace(/\{\{(?:\s*)(content)(?:\s*)\}\}/g, content);
     };
     //Build pages
-    walkdir(paths.pages, [".html"], function (file) {
-        let page = virtualFile(path.join(paths.pages, file)); //Create the new virtual file
+    walkdir(paths.websitePages, [".html"], function (file) {
+        let page = virtualFile(path.join(paths.websitePages, file)); //Create the new virtual file
         virtualFile.read(page); //Read virtual file content
         //Build the output filename
         let outputPagePath = path.normalize(path.format({
@@ -41,7 +41,7 @@ module.exports = function (config, data) {
         });
         //Update the virtualfile with the new folder and paths
         Object.assign(page, {
-            "dirname": path.join(paths.build, path.dirname(outputPagePath)),
+            "dirname": path.join(paths.websiteBuild, path.dirname(outputPagePath)),
             "content": pageContent,
             "extname": ".html"
         });
