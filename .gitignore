@@ -12,5 +12,8 @@ release
 
 # Custom paths
 packages/siimple-colors/docs/data
-packages/website/data/documentation.json
+packages/siimple/scss
+packages/siimple-icons/scss
+scss/_icons.scss
+scss/_colors.scss
 
