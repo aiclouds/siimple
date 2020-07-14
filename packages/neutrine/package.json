@@ -1,7 +1,7 @@
 {
     "name": "neutrine",
     "description": "A collection of React UI components based on siimple",
-    "version": "0.1.5",
+    "version": "0.1.0",
     "author": "Josemi Juanes <josemijuanes@gmail.com>",
     "license": "MIT",
     "main": "dist/neutrine.umd.js",
@@ -20,7 +20,7 @@
     ],
     "files": ["dist"],
     "dependencies": {
-        "siimple": "^0.0.1",
+        "siimple": "^4.0.0-alpha",
         "react": "^16.8.6",
         "react-dom": "^16.8.6"
     }

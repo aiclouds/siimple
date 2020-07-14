@@ -1,6 +1,6 @@
 {
-    "name": "@siimple/icons",
-    "version": "0.0.3",
+    "name": "siimple-icons",
+    "version": "0.1.0",
     "description": "A suite of scalable icons for web, desktop and mobile projects",
     "author": "Josemi Juanes <josemi@siimple.xyz>",
     "license": "MIT",
@@ -12,29 +12,7 @@
     "bugs": "https://github.com/siimple/siimple/issues",
     "files": [
         "dist",
-        "scss",
-        "svg",
-        "icons.json",
-        "categories.json",
-        "CHANGELOG.md",
         "index.scss"
     ],
-    "dependencies": {},
-    "devDependencies": {
-        "get-args": "^2.0.0",
-        "clean-css-cli": "^4.3.0",
-        "postcss-cli": "^7.1.0",
-        "autoprefixer": "^9.6.1",
-        "svgicons2svgfont": "^9.1.1",
-        "stattic": "^0.4.0",
-        "handlebars": "^4.7.3",
-        "glob": "^7.1.6",
-        "sass": "^1.26.2",
-        "sass-lint": "^1.13.1",
-        "svgo": "^1.3.0",
-        "svgstore": "^3.0.0-2",
-        "svg2ttf": "^4.3.0",
-        "ttf2woff": "^2.0.1",
-        "wawoff2": "^1.0.2"
-    }
+    "dependencies": {}
 }
