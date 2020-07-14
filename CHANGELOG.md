@@ -1,11 +1,8 @@
 # Changelog
 
-Each package in this monorepo has its own changelog file:
+This is the changelog of siimple v4. See [CHANGELOG-v3](./CHANGELOG-v3) for old v3 version.
 
-- `@siimple/css`: [packages/siimple-css/CHANGELOG.md](./packages/siimple-css/CHANGELOG.md).
-- `@siimple/lib`: [packages/siimple-lib/CHANGELOG.md](./packages/siimple-lib/CHANGELOG.md).
-- `@siimple/experiments`: [packages/siimple-experiments/CHANGELOG.md](./packages/siimple-experiments/CHANGELOG.md).
-
+> Note: gaps between patch versions are broken or test releases.
 
 ### Tags
 
@@ -19,14 +16,5 @@ We use the following tags to categorize changes we made in each new release:
 - :memo:       **Documentation**: documentation related changes.
 - :house:      **Internal**: internal changes (organization or structure).
 
-
-### Notes
-
-- Gaps between patch versions are broken or test releases.
-
-
-### Credits
-
-Inspired in Babel CHANGELOG: https://github.com/babel/babel/blob/master/CHANGELOG.md.
 
 
