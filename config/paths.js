@@ -6,23 +6,32 @@ let resolveTo = function (to) {
 };
 
 //Get package folder
-let resolvePackage = function (name) {
+let resolvePackageFolder = function (name) {
     return resolveTo(path.join("..", "packages", name));
 };
 
 //Export build paths
 module.exports = {
-    "packages": {
-        "siimple": resolvePackage("siimple"),
-        "neutrine": resolvePackage("neutrine")
-    },
-    "dist": {
-        "siimple": path.join(resolvePackage("siimple"), "dist"),
-        "neutrine": path.join(resolvePackage("neutrine"), "dist")
-    },
-    "scss": resolveTo("../scss"),
+    "root": resolveTo("../"),
+    "package": resolveTo("../package.json"),
+    "modulesFolder": resolveTo("../node_modules"),
+    "packagesFolder": resolveTo("../packages"),
+    "siimpleFolder": resolvePackageFolder("siimple"),
+    "siimpleScssFolder": path.join(resolvePackageFolder("siimple"), "scss"),
+    "siimpleDistFolder": path.join(resolvePackageFolder("siimple"), "dist"),
+    "neutrineDistFolder": path.join(resolvePackageFolder("neutrine"), "dist"),
+    "neutrineFolder": resolvePackageFolder("neutrine"),
+    "scssFolder": resolveTo("../scss"),
+    "libFolder": resolveTo("../lib"),
     "iconsStyle": resolveTo("../scss/_icons.scss"),
     "iconsList": resolveTo("../icons-list.json"),
-    "iconsFolder": resolveTo("../icons/")
+    "iconsFolder": resolveTo("../icons/"),
+    "website": resolveTo("../website"),
+    "websiteData": resolveTo("../website/data"),
+    "websitePartials": resolveTo("../website/partials"),
+    "websitePages": resolveTo("../website/pages"),
+    "websiteLayouts": resolveTo("../website/layouts"),
+    "websiteBuild": resolveTo("../website/www"),
+    "docs": resolveTo("../docs")
 };
 
