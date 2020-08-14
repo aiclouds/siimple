@@ -1,0 +1,23 @@
+//
+// siimple-icons: A suite of scalable icons for web, desktop and mobile projects
+// License:    MIT License 
+// Repository: https://github.com/siimple/siimple
+// Website:    https://icons.siimple.xyz
+//
+
+@use "../index.scss" as siimple;
+
+//Icons class prefix
+$prefix-icons: siimple.$name + "-icons" !default;
+
+//Icons font variables
+$icons-font-name: "siimple-icons" !default;
+$icons-font-url-ttf: "./fonts/siimple-icons.font.ttf" !default;
+$icons-font-url-woff: "./fonts/siimple-icons.font.woff" !default;
+$icons-font-url-woff2: "./fonts/siimple-icons.font.woff2" !default;
+
+//Icons global variables
+//$icons-font-size: siimple.$text-size !default;
+$icons-line-height: 1 !default;
+
+

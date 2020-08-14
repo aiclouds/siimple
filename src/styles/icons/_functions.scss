@@ -1,0 +1,22 @@
+//
+// siimple-icons: A suite of scalable icons for web, desktop and mobile projects
+// License:    MIT License 
+// Repository: https://github.com/siimple/siimple
+// Website:    https://icons.siimple.xyz
+//
+
+@use "sass:string";
+@use "../index.scss" as siimple;
+@use "./_icons.scss" as icons;
+
+//Get a single icon by name
+@function get-icon ($name) {
+    @return siimple.utils-get(icons.$icons-list, "#{$name}");
+}
+
+//Use an icon by name
+@function use-icon($name) {
+    @return string.unquote("\"") + string.unquote(string.insert(get-icon($name), "\\", 1)) + string.unquote("\"");
+}
+
+
