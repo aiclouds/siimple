@@ -1,11 +1,11 @@
-# @siimple/icons
+# siimple-icons
 
 > **siimple icons** is a suite of scalable icons for web, desktop and mobile projects.
 
-[![npm](https://img.shields.io/npm/v/@siimple/icons.svg?style=flat-square)](https://www.npmjs.com/package/@siimple/icons)
-[![npm](https://img.shields.io/npm/dt/@siimple/icons.svg?style=flat-square)](https://www.npmjs.com/package/@siimple-icons)
-[![](https://data.jsdelivr.com/v1/package/npm/@siimple/icons/badge)](https://www.jsdelivr.com/package/npm/@siimple/icons)
-[![npm](https://img.shields.io/npm/l/@siimple/icons.svg?style=flat-square)](https://github.com/siimple/siimple)
+[![npm](https://img.shields.io/npm/v/siimple-icons.svg?style=flat-square)](https://www.npmjs.com/package/siimple-icons)
+[![npm](https://img.shields.io/npm/dt/siimple-icons.svg?style=flat-square)](https://www.npmjs.com/package/@siimple-icons)
+[![](https://data.jsdelivr.com/v1/package/npm/siimple-icons/badge)](https://www.jsdelivr.com/package/npm/siimple-icons)
+[![npm](https://img.shields.io/npm/l/siimple-icons.svg?style=flat-square)](https://github.com/siimple/siimple)
 [![twitter](https://img.shields.io/badge/Twitter-%40siimplecss-blue.svg?style=flat-square)](https://twitter.com/siimplecss)
 [![pr](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/siimple/siimple)
 
@@ -14,7 +14,7 @@
 Use [npm](https://npmjs.com) to install the latest version of **siimple icons**:
 
 ```
-npm install @siimple/icons --save
+npm install siimple-icons --save
 ```
 
 
