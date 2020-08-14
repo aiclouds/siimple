@@ -1,12 +1,13 @@
 //
-// @siimple/experiments - experimental css components based on siimple
+// siimple-experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@forward "@siimple/lib"; //Forward lib variables
+//Forward libs
+@forward "siimple-lib";
 
 //Import experiments
 @use "./scss/dropdown.scss";

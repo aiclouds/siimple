@@ -1,6 +1,6 @@
 {
-    "name": "@siimple/experiments",
-    "version": "0.0.2",
+    "name": "siimple-experiments",
+    "version": "4.0.0-alpha",
     "description": "Experimental css components based on siimple",
     "style": "dist/siimple-experiments.css",
     "browser": "dist/siimple-experiments.css",
@@ -21,10 +21,9 @@
     "files": [
         "dist",
         "scss",
-        "test",
         "index.scss"
     ],
     "dependencies": {
-        "@siimple/lib": "^0.0.1"
+        "siimple-lib": "4.0.0-alpha"
     }
 }
