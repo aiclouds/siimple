@@ -1,0 +1,15 @@
+//
+// @siimple/lib - core scss library for siimple
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
+// Repository: https://github.com/siimple/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@forward "./_variables.scss";
+@forward "./_lists.scss";
+@forward "./_functions.scss";
+@forward "./_mixins.scss";
+@forward "./_utils.scss";
+@forward "./icons.scss";
+

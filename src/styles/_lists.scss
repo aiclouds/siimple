@@ -6,8 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "./variables.scss" as variables;
-@use "./utils.scss" as utils;
+@use "./_variables.scss" as variables;
 
 //Gray color palette
 $grays: (
