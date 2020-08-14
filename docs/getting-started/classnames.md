@@ -1,14 +1,14 @@
 ---
 title: "Class Names"
-description: "How siimple css is structured"
+description: "How siimple is structured"
 ---
 
-**siimple css** uses a modified version of the [**BEM** syntax](https://en.bem.info/methodology/quick-start/) (**B**lock **E**lement **M**odifier): each classname has the prefix **siimple** and uses a single hyphen for the block and element names (in lowercase format) and a double hyphen for modifiers. 
+**siimple** uses a modified version of the [**BEM** syntax](https://en.bem.info/methodology/quick-start/) (**B**lock **E**lement **M**odifier): each classname has the prefix **siimple** and uses a single hyphen for the block and element names (in lowercase format) and a double hyphen for modifiers. 
 
 In this methodology, a **block** is defined as a independent component of the page. An **element** is a part of a block. You can think in elements as child items of a block. 
 Finally, a **modifier** is used to define the appearance, behaviour or state of the block or element where is applied. Modifiers are optional.
 
-There is a schema how classnames are defined in **siimple css**:
+There is a schema how classnames are defined in **siimple**:
 
 ```
 {/* Global modifiers syntax */}

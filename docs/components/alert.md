@@ -20,7 +20,7 @@ An **alert** is a colored notification block generally used to catch the attenti
 
 #### Colors
 
-You can specify the alert color using one of the colors defined in the [theming page](/css/getting-started/theming.html).
+You can specify the alert color using one of the colors defined in the [theming page](../getting-started/theming.html).
 
 ```html preview="true"
 <div class="siimple-alert siimple-alert--primary">

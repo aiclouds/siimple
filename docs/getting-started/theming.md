@@ -1,28 +1,27 @@
 ---
 title: "Theming"
-description: "Customize siimple css"
+description: "Customize siimple"
 ---
 
 #### Introduction
 
-This guide covers all that you need to learn to customize **siimple css** and build your own version. **siimple css** has been written in [scss](https://sass-lang.com) to take advantage of variables, functions and mixins.
+This guide covers all that you need to learn to customize **siimple** and build your own version. **siimple** has been written in [scss](https://sass-lang.com) to take advantage of variables, functions and mixins.
 
 
 #### Project structure
 
-In your project folder, download the latest version of `@siimple/css`, for example using a package manager (npm or yarn). Read the [installation guide](/css/getting-started/installation.html) for more information.
+In your project folder, download the latest version of `siimple`, for example using a package manager (npm or yarn). Read the [installation guide](./installation.html) for more information.
 
-After installing **siimple css**, your project folder will look like this:
+After installing **siimple**, your project folder will look like this:
 
 ```
 your-project/
 +-- scss/
 |   +-- styles.scss
 +-- node_modules/
-    +-- @siimple/
-        +-- css/
-            +-- index.scss
-            +-- scss/
+    +-- siimple/
+        +-- dist/
+        +-- index.scss
 ```
 
 Ensure that you have **sass** installed in your computer. You will need version `>1.23.0`, that can be installed globally running the following command:
@@ -37,40 +36,38 @@ Or you can add it to your project running:
 $ npm install --save-dev sass
 ```
 
-When compiling your styles, ensure that the `node_modules` folder is listed in your [sass include paths](https://sass-lang.com/documentation/cli/dart-sass#load-path) for resolving the path to the **siimple css** package.
+When compiling your styles, ensure that the `node_modules` folder is listed in your [sass include paths](https://sass-lang.com/documentation/cli/dart-sass#load-path) for resolving the path to the **siimple** package.
 
-#### Include siimple css
+#### Import siimple
 
-In your file `/scss/styles.scss`, you can import **siimple css** adding the following line;
+In your file `/scss/styles.scss`, you can import **siimple** adding the following line;
 
 ```scss
-//Option 1: load the whole siimple css package
-@use "@siimple/css";
+//Option 1: load the whole siimple package
+@use "siimple";
 ```
 
-The previous line includes the whole package, but you can include only some parts of **siimple css**:
+The previous line includes the whole package, but you can include only some parts of **siimple**:
 
 ```scss
-//Option 2: include only some parts of siimple css
+//Option 2: include only some parts of siimple
 @use "@siimple/css/scss/elements/btn.scss";
 @use "@siimple/css/scss/components/alert.scss";
 ```
 
 ::: warning title="Important note about imports"
-In version `v4.0.0`, **siimple css** switched to the new `@use` rule instead of using the `@import` rule. You can read about the new [sass module system here](https://sass-lang.com/blog/the-module-system-is-launched).
+In version `v4.0.0`, **siimple** switched to the new `@use` rule instead of using the `@import` rule. You can read about the new [sass module system here](https://sass-lang.com/blog/the-module-system-is-launched).
 :::
 
 
-Every variable in **siimple css** includes the `!default` flag, so you can **override** the default value of the variables described in this page including the package with the `with` rule without modifying the source code:
+Every variable in **siimple** includes the `!default` flag, so you can **override** the default value of the variables described in this page including the package with the `with` rule without modifying the source code:
 
 ```scss
-@use "@siimple/css" with (
+@use "siimple" with (
     $primary: #3298dc,
     $error: #f32b51
 );
 ```
-
-Note that this works only when you include the whole package, but does not work when you include only some parts of the package. Read more about [configuring sass modules here](https://sass-lang.com/documentation/at-rules/use#configuring-modules).
 
 #### Compile your styles
 
@@ -90,10 +87,10 @@ $prefix: "siimple-";
 $prefix-helpers: "siimple--";
 ```
 
-For example you can remove the prefix loading the **siimple css** styles with the following configuration:
+For example you can remove the prefix loading the **siimple** styles with the following configuration:
 
 ```scss
-@use "@siimple/css" with (
+@use "siimple" with (
     $prefix: "",
     $prefix-helpers: ""
 );
@@ -110,7 +107,7 @@ Now, you can use the styles without the `siimple` prefix:
 
 ##### Font family variables
 
-**siimple css** uses [Roboto](https://fonts.google.com/specimen/Roboto) as the default font family, imported automatically from **Google Fonts**. You can customize the default font using the following variables: 
+**siimple** uses [Roboto](https://fonts.google.com/specimen/Roboto) as the default font family, imported automatically from **Google Fonts**. You can customize the default font using the following variables: 
 
 ```scss
 $font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700";
@@ -151,7 +148,7 @@ $text-weight: $weight-normal;
 
 #### Colors
 
-The following colors are defined in **siimple css**:
+The following colors are defined in **siimple**:
  
 <style>
 .colors {
@@ -252,7 +249,7 @@ We provide a **cool gray** color schema (added in **v4.0.0**), with 10 different
 
 #### Breakpoints
 
-**Breakpoints** are useful to customize how the content is displayed depending on the screen width. In **siimple css**, breakpoints are enabled **from the breakpoint value on downwards**, using the `max-width` attribute in the media query.
+**Breakpoints** are useful to customize how the content is displayed depending on the screen width. In **siimple**, breakpoints are enabled **from the breakpoint value on downwards**, using the `max-width` attribute in the media query.
 
 ```
 |  <- 544px |
@@ -270,7 +267,7 @@ Breakpoints are available for [grid columns](/css/grid/column.html).
 
 ##### Breakpoints variables
 
-The following breakpoints variables are defined by default in **siimple css**:
+The following breakpoints variables are defined by default in **siimple**:
 
 ```scss
 $breakpoint-sm: 544px;

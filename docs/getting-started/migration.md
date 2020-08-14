@@ -4,41 +4,18 @@ description: "Coming from older versions? Start here!"
 --- 
 
 
-The first major change that we introduced in `v4.0.0` is that we changed our published package from `siimple` to `@siimple/css`. Also, we have extracted the experimental modules introduced in `v3.2.0` to a new package called `@siimple/experiments`.
 
-#### Update the package
-
-First you should change to this new package in your `package.json` file:
-
-<pre class="siimple-pre siimple--bg-light siimple--text-dark">
-  "dependencies": {
-      . . .
-<strong class="siimple--text-error">-     "siimple": "^3.3.1",</strong>
-<strong class="siimple--text-success">+     "@siimple/css": "^{{ package.version }}",</strong>
-      . . .
-  }
-</pre>
-
-Or run the following **npm** commands:
-
-```bash
-## Remove the old siimple package
-$ npm unistall --save siimple
-
-## Install the new package
-$ npm install --save @siimple/css
-```
-
+### Migrating to v4
 
 #### Update scss imports
 
 We have switched to the new `@use` rule instead of the `@import`, to take advantage of the new sass module system. You can read more about the [new module system here](https://sass-lang.com/blog/the-module-system-is-launched).
 
-So in `v4.x.x` versions, you should use the `@use` rule for importing the **siimple css** package in your scss files:
+So in `v4.x.x` versions, you should use the `@use` rule for importing the **siimple** package in your scss files:
 
 <pre class="siimple-pre siimple--bg-light siimple--text-dark">
 <strong class="siimple--text-error">- @import "siimple";</strong>
-<strong class="siimple--text-success">+ @use "@siimple/css";</strong>
+<strong class="siimple--text-success">+ @use "siimple";</strong>
 </pre>
 
 Also, we have removed the leading underscore character of all `.scss` files, so when importing individual modules you should also remove it:
@@ -148,7 +125,7 @@ The `siimple-grid` wrapper class is no longer needed, so it has been removed.
 
 ##### siimple-box
 
-The `siimple-box` component has been removed from **siimple css**. You can simulate the box component using helpers classes:
+The `siimple-box` component has been removed from **siimple**. You can simulate the box component using helpers classes:
 
 ```html
 <div class="siimple--p-3 siimple--bg-light siimple--border-rounded">

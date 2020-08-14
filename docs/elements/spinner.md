@@ -13,7 +13,7 @@ The **siimple spinner** is a pure CSS loading indicator used for showing the loa
 
 #### Colors
 
-The spinner element is available in all the different colors defined in **siimple css**. Just add a `siimple-spinner--[color]` class to the spinner with the wanted color.
+The spinner element is available in all the different colors defined in **siimple**. Just add a `siimple-spinner--[color]` class to the spinner with the wanted color.
 
 ```html preview="true"
 <div class="siimple--py-3" align="center">
