@@ -1,0 +1,27 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+//Import global modules
+@use "../global/common.scss";
+@use "../global/reset.scss";
+@use "../global/root.scss";
+
+//Import elements modules
+@use "./alert.scss";
+@use "./breadcrumb.scss";
+@use "./btn.scss";
+@use "./card.scss";
+@use "./list.scss";
+@use "./menu.scss";
+@use "./rule.scss";
+@use "./spinner.scss";
+@use "./table.scss";
+@use "./tabs.scss";
+@use "./tag.scss";
+@use "./tip.scss";
+

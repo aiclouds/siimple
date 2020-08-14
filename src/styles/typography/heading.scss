@@ -1,0 +1,34 @@
+//
+// @siimple/css - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "../index.scss" as siimple;
+
+//Headings default variables
+$heading-margin-top: 30px !default;
+$heading-margin-bottom: 0.5em !default;
+$heading-line-height: siimple.$line-height !default;
+$heading-font-weight: siimple.$weight-bold !default;
+$heading-values: ("1": 40px, "2": 32px, "3": 28px, "4": 24px, "5": 20px, "6": 16px) !default;
+
+//Heading class
+.#{siimple.$prefix}h {
+    @each $name,$value in $heading-values {
+        &#{$name} {
+            display: block;
+            font-size: $value; //siimple.utils-get($heading, "size");
+            font-weight: $heading-font-weight;
+            line-height: $heading-line-height;
+            padding: 0px;
+            margin-bottom: $heading-margin-bottom;
+            &:not(:first-child) {
+                margin-top: $heading-margin-top; //siimple.utils-get($heading, "margin-top");
+            }
+        }
+    }
+}
+
