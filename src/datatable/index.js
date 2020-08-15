@@ -1,17 +1,11 @@
-//Import dependencies
 import React from "react";
+import {classNames} from "../utils/classnames.js";
+import {callProp} from "../utils/reactProps.js";
 
-//Import helpers
-import * as helpers from "../../helpers.js";
-
-//Import datatable libs
 import {DataTablePagination} from "./pagination.js";
 import {DataTableRender} from "./render.js";
-import * as DataTableUtils from "./utils.js";
 import {DataTableConst} from "./const.js";
-
-//Import styles
-import "../styles/datatable.scss";
+import "./style.scss";
 
 //Calculate the number of pages
 let calculatePages = function (rowsTotal, rowsPage) {
@@ -20,6 +14,13 @@ let calculatePages = function (rowsTotal, rowsPage) {
     //console.log("Calculated pages: ");
     //console.log(pages);
     return (Math.floor(pages) === pages) ? pages : Math.floor(pages) + 1;
+};
+
+//Generate an array range 
+let range = function (start, length) {
+    return Array(length).fill().map(function (el, index) {
+        return start + index;
+    });
 };
 
 //DataTable component
@@ -47,8 +48,8 @@ export class DataTable extends React.Component {
             "pages": calculatePages(props.data.length, pageSize),
             "pageSize": pageSize,
             "sortedColumns": [], 
-            "filteredRows": DataTableUtils.range(0, props.data.length),
-            "sortedRows": DataTableUtils.range(0, props.data.length)
+            "filteredRows": range(0, props.data.length),
+            "sortedRows": range(0, props.data.length)
         };
     }
     //Reset the table state
@@ -195,7 +196,7 @@ export class DataTable extends React.Component {
     filter(fn) {
         let self = this;
         //Generate the new filter array
-        let filteredRows = DataTableUtils.range(0, this.props.data.length);
+        let filteredRows = range(0, this.props.data.length);
         //Check the filtering function
         if (typeof fn === "function") {
             //Filter the array of rows indexes
@@ -409,8 +410,8 @@ export class DataTable extends React.Component {
                     //Initialize the cell props
                     let cellProps = {
                         "index": index,
-                        "style": helpers.callProp(column.bodyClassName, [row, rowIndex, column, index]),
-                        "className": helpers.callProp(column.bodyStyle, [row, rowIndex, column, index]),
+                        "style": callProp(column.bodyClassName, [row, rowIndex, column, index]),
+                        "className": callProp(column.bodyStyle, [row, rowIndex, column, index]),
                         //"content": (typeof column.defaultValue === "string") ? column.defaultValue : "",
                         "content": null,
                         "selectable": column.selectable,
@@ -460,8 +461,8 @@ export class DataTable extends React.Component {
                 //}
                 //Assign row style
                 Object.assign(rowProps, {
-                    "className": helpers.callProp(this.props.bodyRowClassName, [row, rowProps.index, rowProps.selected]),
-                    "style": helpers.callProp(this.props.bodyRowStyle, [row, rowProps.index, rowProps.selected])
+                    "className": callProp(this.props.bodyRowClassName, [row, rowProps.index, rowProps.selected]),
+                    "style": callProp(this.props.bodyRowStyle, [row, rowProps.index, rowProps.selected])
                 });
                 //Append this row data
                 renderProps.data.push(rowProps);
@@ -497,7 +498,7 @@ export class DataTable extends React.Component {
         let tableProps = {
             //"height": (this.props.pagination === true) ? null : this.props.height,
             "style": {},
-            "className": helpers.classNames(DataTableConst.containerClass, this.props.className)
+            "className": classNames(DataTableConst.containerClass, this.props.className)
         };
         //Check for fixed height
         //if (this.props.pagination === false && this.props.fixedHeader === false) {
