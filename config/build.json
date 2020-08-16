@@ -1,0 +1,18 @@
+{
+    "siimple": {
+        "modules": ["elements", "form", "grid", "layout", "typography", "helpers"],
+        "libs": null
+    },
+    "siimple-lib": {
+        "modules": ["global"],
+        "libs": ["_utils.scss", "_variables.scss", "_lists.scss", "_functions.scss", "_mixins.scss"]
+    },
+    "siimple-icons": {
+        "modules": ["icons"],
+        "libs": ["icons/_functions.scss", "icons/_lists.scss", "icons/_variables.scss"]
+    },
+    "siimple-experiments": {
+        "modules": ["experiments"],
+        "libs": null
+    }
+}
