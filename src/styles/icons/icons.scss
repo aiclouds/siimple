@@ -39,7 +39,7 @@
         display: block;
     }
     //For each icon in the list
-    @each $name in siimple.utils-keys(lib.$icons-list) {
+    @each $name in siimple.utils-keys(lib.$icons) {
         &-#{$name}:before {
             content: lib.use-icon($name);
         }

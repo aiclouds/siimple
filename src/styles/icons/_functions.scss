@@ -7,11 +7,11 @@
 
 @use "sass:string";
 @use "../index.scss" as siimple;
-@use "./_icons.scss" as icons;
+@use "./_lists.scss" as lists;
 
 //Get a single icon by name
 @function get-icon ($name) {
-    @return siimple.utils-get(icons.$icons-list, "#{$name}");
+    @return siimple.utils-get(lists.$icons, "#{$name}");
 }
 
 //Use an icon by name
