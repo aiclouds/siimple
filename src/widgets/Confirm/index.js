@@ -1,6 +1,6 @@
 import React from "react";
 import {Btn} from "../../components/elements/Btn.js";
-import {Modal, ModalContent} from "../../componentsexperiments/Modal.js";
+import {Modal, ModalContent} from "../../components/experiments/Modal.js";
 import {ModalHeader, ModalHeaderTitle, ModalHeaderClose, ModalBody, ModalFooter} from "../../components/experiments/Modal.js";
 
 //Build confirmation header
