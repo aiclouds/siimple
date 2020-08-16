@@ -45,3 +45,10 @@ module.exports.log = {
     }
 };
 
+//Create a folder recursive
+module.exports.mkdir = function (folder) {
+    if (fs.existsSync(folder) === false) {
+        return fs.mkdirSync(folder, {"recursive": true});
+    }
+};
+
