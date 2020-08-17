@@ -1,5 +1,5 @@
 //
-// @siimple/lib - core scss library for siimple
+// siimple-lib - core scss library for siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
 // Repository: https://github.com/siimple/siimple
@@ -9,14 +9,16 @@
 @use "./variables.scss" as variables;
 @use "./functions.scss" as functions;
 @use "./utils.scss" as utils;
+@use "sass:string";
 
 //Set text selection
 //Mixin by @icetee (PR #5) and edited by @dyzajash (PR #11)
 @mixin user-select ($select: "none") {
-    -webkit-user-select: $select;
-    -khtml-user-select: $select;
-    -moz-user-select: $select;
-    -ms-user-select: $select;
+    -webkit-user-select: string.unquote($select);
+    -khtml-user-select: string.unquote($select);
+    -moz-user-select: string.unquote($select);
+    -ms-user-select: string.unquote($select);
+    user-select: string.unquote($select);
 }
 
 //Alias for disabling user selection
@@ -62,7 +64,7 @@
 //Sizing mixin
 @mixin content-size ($size: 0px) {
     //Check for string size
-    @if utils.is-string($size) == true {
+    @if utils.utils-is-string($size) == true {
         $size: functions.content($size); //Get the content size
     }
     //Apply the provided size only in screen widts > $size

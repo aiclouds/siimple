@@ -1,5 +1,5 @@
 //
-// @siimple/lib - core scss library for siimple
+// siimple-lib - core scss library for siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
 // Repository: https://github.com/siimple/siimple
@@ -92,6 +92,23 @@ $margin-top: 0px !default;
 $margin-bottom: 15px !default;
 
 //Screen sizes
-$mobile: 600px;
-$desktop: 1024px;
+$mobile: 600px !default;
+$desktop: 1024px !default;
+
+//Default columns values
+$columns-values: (
+    "1": "8.33%", 
+    "2": "16.66%",
+    "3": "24.99%", 
+    "4": "33.33%",
+    "5": "41.66%", 
+    "6": "49.99%",
+    "7": "58.33%", 
+    "8": "66.66%",
+    "9": "74.99%", 
+    "10": "83.33%",
+    "11": "91.66%", 
+    "12": "99.99%"
+) !default;
+
 

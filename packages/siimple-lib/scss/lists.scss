@@ -1,5 +1,5 @@
 //
-// @siimple/lib - core scss library for siimple
+// siimple-lib - core scss library for siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/develop/LICENSE.md
 // Repository: https://github.com/siimple/siimple
@@ -7,7 +7,6 @@
 //
 
 @use "./variables.scss" as variables;
-@use "./utils.scss" as utils;
 
 //Gray color palette
 $grays: (
