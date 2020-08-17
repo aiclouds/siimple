@@ -1,4 +1,5 @@
 //
+// siimple-lib - core scss library for siimple
 // @siimple/css - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
@@ -6,20 +7,23 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "./variables.scss" as variables;
+@use "../variables.scss" as variables;
+
+//Body variables
+$body-bg: variables.$white !default;
+$body-color: variables.$dark !default;
 
 //Import font from Google Fonts
-@import url(#{siimple.$font-url});
+@import url(#{variables.$font-url});
 
 //Default html style
 html {
-    background-color: variables.$body-bg;
-    color: variables.$body-color; //text-color;
-    font-family: siimple.$font-default;
-    font-weight: siimple.$text-weight;
-    font-size: siimple.$text-size;
-    line-height: siimple.$line-height;
+    background-color: $body-bg;
+    color: $body-color; //text-color;
+    font-family: variables.$font-default;
+    font-weight: variables.$text-weight;
+    font-size: variables.$text-size;
+    line-height: variables.$line-height;
     font-smooth: antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

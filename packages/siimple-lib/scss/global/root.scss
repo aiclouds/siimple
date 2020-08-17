@@ -1,0 +1,30 @@
+//
+// siimple-lib - core scss library for siimple
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "../lists.scss" as lists;
+@use "../variables.scss" as variables;
+
+@mixin variables-from-list ($prefix, $list) {
+    @each $key,$value in $list {
+        --siimple#{$prefix}-#{$key}: #{$value};
+    }
+}
+
+:root {
+    //Default colors
+    @include variables-from-list("", lists.$colors);
+    --siimple-white: #{variables.$white};
+    --siimple-muted: #{variables.$muted};
+    --siimple-black: #{variables.$black};
+    //Gray colors
+    @include variables-from-list("", lists.$grays);
+    //Breakpoints
+    @include variables-from-list("-breakpoint", lists.$breakpoints);
+    @include variables-from-list("-content", lists.$contents);
+}
+
