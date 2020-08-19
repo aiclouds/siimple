@@ -25,7 +25,7 @@ Here is a full example of a jumbotron element:
 
 #### Colors
 
-Costomize the jumbotron adding one of the siimple colors described in the [theming page](/css/getting-started/theming.html).
+Costomize the jumbotron adding one of the siimple colors described in the [theming page](../getting-started/theming.html).
 
 ```html
 <div class="siimple-jumbotron siimple-jumbotron--dark">

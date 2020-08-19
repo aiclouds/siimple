@@ -37,6 +37,6 @@ The `siimple-row` class is a wrapper for displaying the columns of your grid in 
 </div>
 ```
 
-Check the [column documentation](/css/grid/column.html) to learn more about **grid columns**.
+Check the [column documentation](./column.html) to learn more about **grid columns**.
 
 

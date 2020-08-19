@@ -20,7 +20,7 @@ A **siimple tip** is a special alert element designed to grab attention in somet
 
 #### Colored tip
 
-All the different colors specified in the [theming](/css/getting-started/theming.html) section can be used to customize your tip element:
+All the different colors specified in the [theming](../getting-started/theming.html) section can be used to customize your tip element:
 
 ```html preview="true"
 <div class="siimple-tip siimple-tip--primary">
