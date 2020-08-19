@@ -59,3 +59,13 @@
     @return utils.utils-get(lists.$grays, $name);
 }
 
+//Get a single icon by name
+@function icon ($name) {
+    @return utils.utils-get(lists.$icons, "#{$name}");
+}
+
+//Use an icon by name
+@function use-icon($name) {
+    @return string.unquote("\"") + string.unquote(string.insert(icon($name), "\\", 1)) + string.unquote("\"");
+}
+
