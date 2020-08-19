@@ -7,8 +7,9 @@
 
 //Import dependencies
 @forward "@siimple/lib"; //Forward lib variables
-@forward "./scss/variables.scss"; //Forward icons variables
+//@forward "./scss/variables.scss"; //Forward icons variables
 
-@use "./scss/base.scss";
+//Include icons
+@use "./scss/icons.scss";
 
 
