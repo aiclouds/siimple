@@ -1,67 +1,54 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "../variables.scss";
+@use "siimple-lib" as siimple;
 
-$positions: (
-    "t": "top",
-    "b": "bottom",
-    "l": "left",
-    "r": "right"
-);
+//Spacing variables
+$spacing-positions: ("t": "top", "b": "bottom", "l": "left", "r": "right") !default;
+$spacing-horizontal: true !default; //Allow horizontal spacing (x)
+$spacing-vertical: true !default; //Allow vertical spacing (y)
+$spacing-shortcuts: ("m": "margin", "p": "padding") !default;
+$spacing-values: ("0": 0px, "1": 5px, "2": 10px, "3": 15px, "4": 25px, "5": 45px) !default;
 
 //Spacing class
 .#{siimple.$prefix-helpers} {
-    @each $key,$value in variables.$spacing {
-        //Margin positions
-        @each $position-key, $position-value in $positions {
-            &m#{$position-key}-#{$key} {
-                margin-#{$position-value}: $value !important;
-            }
-        }
-        //Margin left and right
-        &mx-#{$key} {
-            margin-left: $value !important;
-            margin-right: $value !important;
-        }
-        //Margin top and bottom
-        &my-#{$key} {
-            margin-top: $value !important;
-            margin-bottom: $value !important;
-        }
-        //Padding attributes only if key is not auto
-        @if $key != "auto" {
-            //Margin alias
-            &m-#{$key} {
-                margin: $value !important;
-            }
-            //Padding alias
-            &p-#{$key} {
-                padding: $value !important;
-            }
-            //Padding positions
-            @each $position-key, $position-value in $positions {
-                &p#{$position-key}-#{$key} {
-                    padding-#{$position-value}: $value !important;
+    @each $sk,$sv in $spacing-shortcuts {
+        @each $vk,$vv in $spacing-values {
+            //Check for adding horizontal spacings
+            @if $spacing-horizontal == true {
+                &#{$sk}x-#{$vk} {
+                    #{$sv}-left: $vv !important;
+                    #{$sv}-right: $vv !important;
                 }
             }
-            //Padding left and right
-            &px-#{$key} {
-                padding-left: $value !important;
-                padding-right: $value !important;
+            //Check for adding vertical spacings
+            @if $spacing-vertical == true {
+                &#{$sk}y-#{$vk} {
+                    #{$sv}-top: $vv !important;
+                    #{$sv}-bottom: $vv !important;
+                }
             }
-            //Padding top and bottom
-            &py-#{$key} {
-                padding-top: $value !important;
-                padding-bottom: $value !important;
+            //Add all positions
+            &#{$sk}-#{$vk} {
+                #{$sv}: $vv !important;
+            }
+            //Add positions
+            @each $pk,$pv in $spacing-positions {
+                &#{$sk}#{$pk}-#{$vk} {
+                    #{$sv}-#{$pv}: $vv !important;
+                }
             }
         }
+    }
+    //Margin auto
+    &mx-auto {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

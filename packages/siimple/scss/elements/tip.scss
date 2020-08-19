@@ -1,13 +1,14 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "siimple-lib" as siimple;
 
+//Tip variables
 $tip-padding: 20px;
 $tip-border-width: 40px;
 

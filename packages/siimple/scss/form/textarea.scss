@@ -1,12 +1,12 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "siimple-lib" as siimple;
 
 //Textarea variables
 $textarea-padding: 15px;
@@ -17,6 +17,7 @@ $textarea-line-height: 22px;
 .#{siimple.$prefix}textarea {
     display: inline-block;
     line-height: $textarea-line-height;
+    font: inherit; //Important
     font-size: $textarea-text-size;
     color: siimple.$text-color;
     padding: $textarea-padding;

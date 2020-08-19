@@ -1,29 +1,24 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "../variables.scss";
+@use "siimple-lib" as siimple;
+
+//Default percentages values 
+$sizing-shortcuts: "width", "height", "max-width", "max-height" !default;
+$sizing-values : ("0": 0%, "25": 25%, "50": 50%, "75": 75%, "100": 100%) !default;
 
 //Sizing helpers
 .#{siimple.$prefix-helpers} {
-    //Sizes 
-    @each $key,$value in variables.$percentages {
-        &width-#{$key} {
-            width: $value !important;
-        }
-        &max-width-#{$key} {
-            max-width: $value !important;
-        }
-        &height-#{$key} {
-            height: $value !important;
-        }
-        &max-height-#{$key} {
-            max-height: $value !important;
+    @each $size in $sizing-shortcuts {
+        @each $key,$value in $sizing-values {
+            &#{$size}-#{$key} {
+                #{$size}: $value !important;
+            }
         }
     }
 }

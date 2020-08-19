@@ -1,19 +1,18 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
-@use "../variables.scss" as variables;
+@use "siimple-lib" as siimple;
 
 //Table cell variables
 $table-cell-padding: 15px !default;
 $table-cell-padding-small: 8px !default;
 $table-cell-padding-large: 25px !default;
-$table-cell-sizes: variables.$grid;
+$table-cell-sizes: siimple.$columns-values;
 $table-colors: (
     "primary": siimple.utils-lighten(siimple.color-lighter("primary"), 15%), 
     "secondary": siimple.utils-lighten(siimple.color-lighter("secondary"), 15%), 

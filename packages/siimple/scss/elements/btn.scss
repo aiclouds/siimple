@@ -1,13 +1,14 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "siimple-lib" as siimple;
 
+//Button variables
 $btn-padding-left: 15px;
 $btn-padding-right: 15px;
 $btn-padding-top: 8px;
@@ -15,7 +16,7 @@ $btn-padding-bottom: 8px;
 
 //Button class
 .#{siimple.$prefix}btn {
-    display: inline-block;
+    display: inline-flex; //inline-block;
     //min-height: 24px;
     //transition: opacity 0.3s;
     //transition: background-color 0.3s;

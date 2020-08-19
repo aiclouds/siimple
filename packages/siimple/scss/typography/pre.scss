@@ -1,14 +1,14 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "siimple-lib" as siimple;
 
-//Pre vriables
+//Pre variables
 $pre-text-size: 13px !default;
 $pre-line-height: 18px !default;
 $pre-padding-left: 20px !default;
