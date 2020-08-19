@@ -1,16 +1,23 @@
 //
-// @siimple/experiments - experimental css components based on siimple
+// siimple-experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@forward "@siimple/lib"; //Forward lib variables
+//Forward lib modules
+@forward "@siimple/lib";
+
+//Import global modules
+@use "siimple-lib/scss/global/common.scss";
+@use "siimple-lib/scss/global/reset.scss";
+@use "siimple-lib/scss/global/root.scss";
 
 //Import experiments
-@use "./scss/dropdown.scss";
+//@use "./scss/dropdown.scss";
+@use "./scss/media.scss";
 @use "./scss/modal.scss";
 @use "./scss/progress.scss";
-@use "./scss/steps.scss";
+//@use "./scss/steps.scss";
 

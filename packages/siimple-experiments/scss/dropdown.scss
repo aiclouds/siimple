@@ -1,15 +1,15 @@
 //
-// @siimple/experiments - experimental css components based on siimple
+// siimple-experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+@use "siimple-lib" as siimple;
 
 //Dropdown experimental component
-.#{siimple.$prefix}dropdown {
+.#{siimple.$prefix-experiments}dropdown {
     position: relative;
     //Dropdown toggle arrow
     &-toggle::after {

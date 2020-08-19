@@ -1,12 +1,13 @@
 //
-// @siimple/experiments - experimental css components based on siimple
+// siimple-experiments - experimental css components based on siimple
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@use "@siimple/lib" as siimple;
+//Import libs
+@use "siimple-lib" as siimple;
 
 //Progress variables 
 $progress-height: 20px;
@@ -23,7 +24,7 @@ $progress-striped: siimple.color("white");
 }
 
 //Progress class
-.#{siimple.$prefix}progress {
+.#{siimple.$prefix-experiments}progress {
     display: block;
     width: 100%;
     height: $progress-height;
