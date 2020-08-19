@@ -1,22 +1,24 @@
 //
-// @siimple/css - minimal css toolkit for flat and clean websites
+// siimple - minimal css toolkit for flat and clean websites
 // Under the MIT LICENSE.
 // License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
 // Repository: https://github.com/siimple
 // Website:    https://www.siimple.xyz
 //
 
-@forward "@siimple/lib"; //Forward lib variables
-@forward "./scss/variables.scss"; //Forward package variables
+//Forward lib variables
+@forward "siimple-lib";
 
-@use "./scss/base.scss";
-@use "./scss/root.scss";
-@use "./scss/reset.scss";
-@use "./scss/typography/index.scss" as typography;
+//Import global modules
+@use "siimple-lib/scss/global/common.scss";
+@use "siimple-lib/scss/global/reset.scss";
+@use "siimple-lib/scss/global/root.scss";
+
+//Import modules
 @use "./scss/elements/index.scss" as elements;
-@use "./scss/components/index.scss" as components;
-@use "./scss/layout/index.scss" as layout;
-@use "./scss/form/index.scss" as form;
-@use "./scss/helpers/index.scss" as helpers;
+@use "./scss/form/index.scss" as forms;
 @use "./scss/grid/index.scss" as grid;
+@use "./scss/helpers/index.scss" as helpers;
+@use "./scss/layout/index.scss" as layout;
+@use "./scss/typography/index.scss" as typography;
 
