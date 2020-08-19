@@ -1,0 +1,25 @@
+//
+// siimple-lib - core scss library for siimple
+// License:    MIT License 
+// Repository: https://github.com/siimple/siimple
+// Website:    https://icons.siimple.xyz
+//
+
+@use "../variables.scss" as variables;
+
+//Icons class prefix
+$prefix-icons: variables.$name + "-icon" !default;
+
+//Icons font variables
+$icons-font-name: "siimple-icons" !default;
+$icons-font-folder: "./fonts" !default;
+$icons-font-extprefix: ".font" !default;
+$icons-font-url-ttf: $icons-font-folder + "/" + $icons-font-name + $icons-font-extprefix + ".ttf" !default;
+$icons-font-url-woff: $icons-font-folder + "/" + $icons-font-name + $icons-font-extprefix + ".woff" !default;
+$icons-font-url-woff2: $icons-font-folder + "/" + $icons-font-name + $icons-font-extprefix + ".woff2" !default;
+
+//Icons global variables
+//$icons-font-size: siimple.$text-size !default;
+$icons-line-height: 1 !default;
+
+
