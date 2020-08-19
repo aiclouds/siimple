@@ -1,7 +1,11 @@
-# @siimple/experiments
+# siimple-experiments
 
 :construction: This package is currently under development. **Use it at your own risk**.
 
+## Installation
+
+
+## Usage
 
 
 ## License 
