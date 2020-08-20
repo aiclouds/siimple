@@ -1,6 +1,6 @@
 import React from "react";
-import {Btn} from "../../core/btn/index.js";
-import {Select} from "../../core/select/index.js";
+import {Btn} from "../components/elements/Btn.js";
+import {Select} from "../components/form/Select.js";
 
 //Strong text wrapper
 let Strong = function (text) {
@@ -22,7 +22,7 @@ export function DataTablePagination (props) {
     //Render the pagination left content 
     let renderLeftContent = function () {
         //Left content text 
-        let text = React.createElement("div", {"className": "neutrine-datatable-pagination-text"}, 
+        let text = React.createElement("div", {"className": "siimple__datatable-pagination-text"}, 
             "Showing ", 
             Strong(props.rowStart + 1), 
             " to ", 
@@ -32,7 +32,7 @@ export function DataTablePagination (props) {
             " rows."
         );
         //Return the left content
-        return React.createElement("div", {"className": "neutrine-datatable-pagination-left"}, text);
+        return React.createElement("div", {"className": "siimple__datatable-pagination-left"}, text);
     }
     //Render the pagination right content 
     let renderRightContent = function () {
@@ -55,7 +55,7 @@ export function DataTablePagination (props) {
         });
         //Select props
         let selectProps = { 
-            "className": "neutrine-datatable-pagination-entries", 
+            "className": "siimple__datatable-pagination-entries", 
             "onChange": null, 
             "value": props.pageSize
         };
@@ -77,7 +77,7 @@ export function DataTablePagination (props) {
         //Next page button props
         let nextButtonProps = {
             //"color": "light",
-            "className": "neutrine-datatable-pagination-btn",
+            "className": "siimple__datatable-pagination-btn",
             "onClick": function (event) {
                 return changePage(props.page + 1);
             }
@@ -85,24 +85,24 @@ export function DataTablePagination (props) {
         //Previous page button props
         let prevButtonProps = {
             //"color": "light",
-            "className": "neutrine-datatable-pagination-btn",
+            "className": "siimple__datatable-pagination-btn",
             "onClick": function (event) {
                 return changePage(props.page - 1);
             }
         };
         //Return the right content component
-        return React.createElement("div", {"className": "neutrine-datatable-pagination-right"}, 
-            React.createElement("div", {"className": "neutrine-datatable-pagination-text"}, "Rows per page: "),
+        return React.createElement("div", {"className": "siimple__datatable-pagination-right"}, 
+            React.createElement("div", {"className": "siimple__datatable-pagination-text"}, "Rows per page: "),
             React.createElement(Select, selectProps, selectChilds),
-            React.createElement("div", {"className": "neutrine-datatable-pagination-space"}, null),
+            React.createElement("div", {"className": "siimple__datatable-pagination-space"}, null),
             React.createElement(Btn, prevButtonProps, "Prev"),
-            React.createElement("div", {"className": "neutrine-datatable-pagination-page"}, pageCounter),
+            React.createElement("div", {"className": "siimple__datatable-pagination-page"}, pageCounter),
             React.createElement(Btn, nextButtonProps, "Next")
         );
     }
     //Initialize the pagination props
     let paginationProps = {
-        "className": "neutrine-datatable-pagination"
+        "className": "siimple__datatable-pagination"
     };
     //Build the pagination component 
     return React.createElement("div", paginationProps, renderLeftContent(), renderRightContent());

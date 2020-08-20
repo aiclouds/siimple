@@ -1,7 +1,7 @@
-@use "@siimple/lib" as siimple;
+@use "siimple-lib" as siimple;
 
 //DataTable class
-.neutrine-datatable {
+.siimple__datatable {
     display: block;
     width: 100%;
     max-width: 100%;

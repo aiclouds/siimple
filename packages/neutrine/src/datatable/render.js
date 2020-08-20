@@ -1,9 +1,8 @@
 import React from "react";
-import {Table, TableHeader, TableBody, TableRow, TableCell} from "../../core/table/index.js";
-import {Check} from "../../future/check/index.js";
-import * as helpers from "../../helpers.js";
-
-import * as DataTableUtils from "./utils.js";
+import {Table, TableHeader, TableBody, TableRow, TableCell} from "../components/elements/Table.js";
+import {Check} from "../components/future/Check/index.js";
+import {classNames} from "../utils/classnames.js";
+import {findClassInNodeList} from "../utils/dom.js";
 import {DataTableConst} from "./const.js";
 
 //Export datatable render component
@@ -15,7 +14,7 @@ export function DataTableRender (props) {
     //Handle body cell click
     let handleBodyCellClick = function (event) {
         //Find the cell class in the nodes list
-        return DataTableUtils.findClassInNodeList(event.nativeEvent.path, DataTableConst.cellClass, function (node, index) {
+        return findClassInNodeList(event.nativeEvent.path, DataTableConst.cellClass, function (node, index) {
             //Get the row and column index
             let rowIndex = parseInt(node.dataset.row);
             let colIndex = parseInt(node.dataset.column);
@@ -59,7 +58,7 @@ export function DataTableRender (props) {
         //Add the cell column index
         cellProps["data-column"] = column.index;
         //Build the class list
-        cellProps.className = helpers.classNames(cellClassList, column.className);
+        cellProps.className = classNames(cellClassList, column.className);
         //Save the cell
         return React.createElement(TableCell, cellProps, column.content);
     });
@@ -109,7 +108,7 @@ export function DataTableRender (props) {
                 cellProps.align = "center";
             }
             //Add classnames
-            cellProps.className = helpers.classNames(cellClassList, cell.className);
+            cellProps.className = classNames(cellClassList, cell.className);
             //Return the cell element
             return React.createElement(TableCell, cellProps, cellContent);
         });
@@ -150,7 +149,7 @@ export function DataTableRender (props) {
     }
     //Generate the table props
     let tableProps = {
-        "className": helpers.classNames(tableClassList),
+        "className": classNames(tableClassList),
         "border": props.border,
         "striped": props.striped,
         "hover": props.hover
