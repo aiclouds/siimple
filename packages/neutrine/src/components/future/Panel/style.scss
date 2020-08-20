@@ -1,0 +1,88 @@
+@use "siimple-lib" as siimple;
+
+//Panel variables
+$panel-prefix: "siimple__panel";
+
+//Panel style
+.#{$panel-prefix} {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.#{$panel-prefix}-header {
+    display: flex;
+    //background-color: siimple.utils-lighten(siimple.color("dark"), 40%);
+    background-color: siimple.gray("1");
+    padding: 10px;
+    //height: $header-height;
+    //Disable selection
+    @include siimple.user-select("none");
+}
+.#{$panel-prefix}-tab {
+    flex-shrink: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    //background-color: siimple.color("white");
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: siimple.$border-radius;
+    cursor: pointer;
+    opacity: 0.6;
+    //@include siimple.user-select("none");
+    //Not first tab
+    &:not(:first-child) {
+        margin-left: 5px;
+    }
+    //Tab hover
+    &:hover {
+        opacity: 1.0;
+    }
+    //Tab active
+    &--active {
+        background-color: siimple.color("primary");
+        color: siimple.color("white");
+        opacity: 1.0 !important;
+    }
+}
+.#{$panel-prefix}-title {
+    flex-shrink: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    line-height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    //@include siimple.user-select("none");
+}
+.#{$panel-prefix}-body {
+    flex-grow: 1;
+    padding: 10px;
+    background-color: siimple.color("white");
+    //Terrible hack for preventing bugs
+    //https://github.com/philipwalton/flexbugs/issues/42#issuecomment-107128787
+    height: 0px;
+    min-height: 0;
+}
+.#{$panel-prefix}-footer {
+    display: flex;
+    padding: 10px;
+    background-color: siimple.color("white");
+}
+//First child --> add border radius top
+.#{$panel-prefix}-header:first-child,
+.#{$panel-prefix}-body:first-child,
+.#{$panel-prefix}-footer:first-child {
+    border-top-left-radius: siimple.$border-radius;
+    border-top-right-radius: siimple.$border-radius;
+}
+//Last child --> add border radius bottom
+.#{$panel-prefix}-header:last-child,
+.#{$panel-prefix}-body:last-child,
+.#{$panel-prefix}-footer:last-child {
+    border-bottom-left-radius: siimple.$border-radius;
+    border-bottom-right-radius: siimple.$border-radius;
+}
+

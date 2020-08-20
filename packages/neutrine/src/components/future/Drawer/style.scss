@@ -1,0 +1,100 @@
+@use "siimple-lib" as siimple;
+
+//Drawer variables
+$drawer-border-radius: 2 * siimple.$border-radius;
+
+//Drawer style
+.siimple__drawer {
+    //Background 
+    &-background {
+        display: none;
+        //visibility: hidden;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 100;
+        background-color: rgba(siimple.color-darker("dark"), 0.4);
+        overflow-x: hidden;
+        overflow-y: hidden;
+        //transition: visibility 0.3s;
+    }
+    //Side visible
+    &--visible &-background {
+        display: block;
+        //visibility: visible;
+    }
+    //Side content
+    &-content {
+        display: block;
+        //display: none;
+        //width: 400px; //Default width
+        //height: 100%;
+        background-color: siimple.color("white");
+        border-radius: 0px;
+        position: fixed;
+        //top: 0px;
+        z-index: 120;
+        overflow-x: hidden;
+        overflow-y: auto;
+        //Right aligned drawer
+        &--right {
+            top: 0px;
+            right: calc(-1 * 100%);
+            transition: right 0.3s;
+        }
+        //Left aligned drawer
+        &--left {
+            top: 0px;
+            left: calc(-1 * 100%);
+            transition: left 0.3s;
+        }
+        //Top aligned drawer
+        &--top {
+            left: 0px;
+            top: calc(-1 * 100%);
+            transition: top 0.3s;
+        }
+        //Bottom aligned drawer
+        &--bottom {
+            left: 0px;
+            bottom: calc(-1 * 100%);
+            transition: bottom 0.3s;
+        }
+    }
+    //Side visible
+    //&--visible &-content {
+    //    display: block;
+    //}
+    &--visible &-content--right {
+        right: 0px;
+    }
+    &--visible &-content--left {
+        left: 0px;
+    }
+    &--visible &-content--top {
+        top: 0px;
+    }
+    &--visible &-content--bottom {
+        bottom: 0px;
+    }
+    //Rounded drawer
+    &--rounded &-content--right {
+        border-top-left-radius: $drawer-border-radius;
+        border-bottom-left-radius: $drawer-border-radius;
+    }
+    &--rounded &-content--left {
+        border-top-right-radius: $drawer-border-radius;
+        border-bottom-right-radius: $drawer-border-radius;
+    }
+    &--rounded &-content--top {
+        border-bottom-left-radius: $drawer-border-radius;
+        border-bottom-right-radius: $drawer-border-radius;
+    }
+    &--rounded &-content--bottom {
+        border-top-left-radius: $drawer-border-radius;
+        border-top-right-radius: $drawer-border-radius;
+    }
+}
+
