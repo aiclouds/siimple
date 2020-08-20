@@ -1,6 +1,7 @@
-@use "@siimple/lib" as siimple;
+@use "siimple-lib" as siimple;
 
-.neutrine__loading {
+//Loading styles
+.siimple__loading {
     display: block;
     position: fixed;
     background-color: siimple.color("primary");
@@ -13,12 +14,12 @@
     &--completed {
         opacity: 0;
         width: 0%;
-        animation: neutrine__loading-animation 0.5s linear;
+        animation: siimple__loading-animation 0.5s linear;
     }
 }
 
 //Loading bar animation keyframes
-@keyframes neutrine__loading-animation {
+@keyframes siimple__loading-animation {
     0% {
         width: 100%;
         opacity: 1;

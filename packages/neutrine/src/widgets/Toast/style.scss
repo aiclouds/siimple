@@ -1,0 +1,53 @@
+//Toast variables
+//$toast-width: 600px;
+$toast-index: 4000;
+$toast-offset: 15px;
+
+//Toast element class
+.siimple__toast {
+    //width: $toast-width;
+    transition: all 0.3s;
+    min-height: 50px;
+    z-index: $toast-index;
+    position: fixed;
+    //left: calc(50% - #{$toast-width} / 2);
+    margin: 0px !important;
+    padding: 0px !important;
+    opacity: 0;
+    bottom: -50%;
+    //Visible toast
+    &--visible {
+        bottom: $toast-offset;
+        opacity: 1.0 !important;
+    }
+    ////Toast position top
+    //&--top { 
+    //    top: -50px; 
+    //}
+    ////Toast position top visible
+    //&--top#{&}--visible { 
+    //    top: 40px !important; 
+    //}
+    //Centered bottom toast
+    &--center { 
+        //bottom: -50%;
+        transform: translateX(-50%);
+        left: 50%;
+    }
+    //Left aligned bottom toast
+    &--left {
+        //bottom: -50%;
+        left: $toast-offset;
+    }
+    //Right aligned bottom toast
+    &--right {
+        //bottom: -50%;
+        right: $toast-offset;
+    }
+    //Bottom visible styles
+    //&--bottom#{&}--visible,
+    //&--bottom-left#{&}--visible,
+    //&--bottom-right#{&}--visible {
+    //    bottom: $toast-offset;
+    //}
+}
