@@ -6,7 +6,7 @@
 // Website:    https://www.siimple.xyz
 //
 
-@use "../lists.scss" as lists;
+@use "../lists/index.scss" as lists;
 @use "../variables.scss" as variables;
 
 @mixin variables-from-list ($prefix, $list) {
