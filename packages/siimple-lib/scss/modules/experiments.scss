@@ -1,0 +1,13 @@
+//
+// siimple-lib - core scss library for siimple
+// License:    MIT License 
+// Repository: https://github.com/siimple/siimple
+// Website:    https://icons.siimple.xyz
+//
+
+@use "../variables.scss" as variables;
+
+//Experiments class prefix
+$prefix-experiments: variables.$name + "-" !default;
+
+
