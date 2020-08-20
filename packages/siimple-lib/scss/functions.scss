@@ -9,6 +9,7 @@
 @use "./variables.scss" as variables;
 @use "./lists/index.scss" as lists;
 @use "./utils.scss" as utils;
+@use "sass:string" as string;
 
 //Get a color from the color palette
 @function color ($color: "dark") {
