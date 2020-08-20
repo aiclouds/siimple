@@ -19,10 +19,10 @@
 }
 
 //Icon class
-.#{lib.$prefix-icons} {
+.#{siimple.$prefix-icons} {
     display: inline-flex; //inline-block;
     align-self: center;
-    font-family: iimple$icons-font-name;
+    font-family: siimple.$icons-font-name;
     //font-size: siimple.$icons-font-size;
     line-height: siimple.$icons-line-height; //normal;
     font-weight: normal !important;
