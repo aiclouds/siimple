@@ -12,7 +12,7 @@ process.nextTick(function () {
         throw new Error("No output file provided");
     }
     //Get all icons
-    let files = fs.readdirSync(paths.src.icons, "utf8").filter(function (file) {
+    let files = fs.readdirSync(paths.icons.folder, "utf8").filter(function (file) {
         return path.extname(file) === ".svg"; //Get only .svg files
     });
     //Sprites storage
@@ -24,7 +24,7 @@ process.nextTick(function () {
         }
         //Get current file
         let file = files[index];
-        let content = fs.readFileSync(path.join(paths.src.icons, file), "utf8");
+        let content = fs.readFileSync(path.join(paths.icons.folder, file), "utf8");
         //Initialize the svg minimize
         let prefix = path.basename(file, path.extname(file));
         let svgmin = new svgo({plugins: [{cleanupIDs: {prefix: prefix + '-', minify: true}}]});

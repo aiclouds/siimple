@@ -7,7 +7,7 @@ let utils = require("./utils.js");
 
 //Build the SVG font
 process.nextTick(function () {
-    let icons = utils.readJSON(paths.icons);
+    let icons = utils.readJSON(paths.icons.list);
     let options = getArgs().options;
     let fontStream = new SVGIcons2SVGFontStream({
         "fontName": "SiimpleIcons", 
@@ -29,7 +29,7 @@ process.nextTick(function () {
     //Add each icon in the font stream
     icons.forEach(function (icon) {
         //process.stdout.write("Adding icon '" + icon.id + "' to SVG font");
-        let iconPath = path.join(paths.src.icons, `${icon.id}.svg`);
+        let iconPath = path.join(paths.icons.folder, `${icon.id}.svg`);
         let iconReader = fs.createReadStream(iconPath);
         //Set the icon metadata
         iconReader.metadata = {
