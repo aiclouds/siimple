@@ -1,10 +1,9 @@
 import React from "react";
-import {createEditor, defaultOptions} from "./editor.js";
-import {colorize} from "./colorize.js";
-import {filterProps} from "../utils/reactProps.js";
+import {createEditor, defaultOptions} from "../editor.js";
+import {filterProps} from "../../utils/reactProps.js";
 
 //Code editor component
-class Editor extends React.Component {
+export class EditorComponent extends React.Component {
     constructor(props) {
         super(props);
         //Referenced elements
@@ -44,16 +43,7 @@ class Editor extends React.Component {
 }
 
 //Editor class default props
-Editor.defaultProps = {
+EditorComponent.defaultProps = {
     "defaultValue": "" //Initial value
-};
-
-
-//Export editor modules
-export {
-    Editor,
-    createEditor,
-    defaultOptions,
-    colorize
 };
 
