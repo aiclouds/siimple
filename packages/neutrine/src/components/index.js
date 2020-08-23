@@ -1,8 +1,8 @@
 //Export utils
-export {classNames} from "../utils/classnames.js";
-export {createStorage, Storage} from "../utils/storage.js";
-export {whenReady} from "../utils/ready.js";
-export {global, createGlobalStorage} from "../utils/global.js";
+//export {classNames} from "../utils/classnames.js";
+//export {createStorage, Storage} from "../utils/storage.js";
+//export {whenReady} from "../utils/ready.js";
+//export {global, createGlobalStorage} from "../utils/global.js";
 
 //Elemental components
 export * from "./elements/Alert.js";
