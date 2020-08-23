@@ -36,6 +36,9 @@ module.exports.writeJSON = function (file, content) {
 
 //For displaying basic logs
 module.exports.log = {
+    "info": function (message) {
+        return console.log(`[INFO] ${message}`);
+    },
     "warn": function (message) {
         return console.warn(`[WARNING] ${message}`);
     },

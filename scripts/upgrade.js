@@ -1,56 +1,32 @@
 let fs = require("fs");
 let path = require("path");
-let pkg = require(path.join(process.cwd(), "package.json"));
+let paths = require("../config/paths.js");
+let utils = require("./utils.js");
 
-//Update dependencies
-let updateDependencies = function (list) {
-    let changes = 0;
-    if (typeof list === "object") {
-        Object.keys(list).forEach(function (key) {
-            if (key.indexOf("@siimple") !== -1) {
-                if ("^" + pkg.packages[key] !== list[key]) {
-                    list[key] = "^" + pkg.packages[key];
-                    changes = changes + 1;
-                }
-            }
-            else if (list[key] !== pkg.dependencies[key]) {
-                list[key] = pkg.dependencies[key];
-                changes = changes + 1;
-            }
-            //list[key] = (key.indexOf("@siimple") !== -1) ? "^" + pkg.packages[key] : pkg.dependencies[key];
-        });
-    }
-    //Return the number of changes made
-    return changes;
-};
-
-//Packages folder
-let pkgsPath = path.join(process.cwd(), "packages");
-//Read packages directory
-fs.readdirSync(pkgsPath, "utf8").forEach(function (folder) {
-    let folderPath = path.join(pkgsPath, folder);
-    //Check if folder is not a directory
-    if (fs.statSync(folderPath).isDirectory() === false) {
-        return null;
-    }
-    let localPath = path.join(folderPath, "package.json");
-    //Check for no package.json on this folder
-    if (fs.existsSync(localPath) === false) {
-        return null;
-    }
-    let localPkg = JSON.parse(fs.readFileSync(localPath, "utf8"));
-    let changes = 0; //To store if this local package.json has been updated
-    //Update version
-    if (localPkg.version !== pkg.packages[localPkg.name]) {
-        localPkg.version = pkg.packages[localPkg.name];
-        changes = changes + 1;
-    }
-    //Update dependencies version
-    changes = changes + updateDependencies(localPkg.dependencies);
-    changes = changes + updateDependencies(localPkg.devDependencies);
-    //Save the package.json file only if the number of changes is > 0
-    if (changes > 0) {
-        fs.writeFileSync(localPath, JSON.stringify(localPkg, null, "    "), "utf8");
-    }
+//Upgrade package versions
+process.nextTick(function () {
+    let {packages, version} = utils.readJSON(paths.package); //Get package.json file
+    //let version = package.version; //Current version
+   return packages.forEach(function (name) {
+       let packagePath = path.join(paths.packages.folder, name, package.json); //Get package folder
+       let packageContent = utils.readJSON(packagePath); //Read package content
+       if (packageContent.version === version) {
+           return null; //Save version --> do not update it
+       }
+       utils.log.info(`Upgrade '${name}' package version to '${version}'`);
+       packageContent.version = version; //Update package version
+       //Update dependencies versions
+       if (typeof packageContent.dependencies === "object") {
+           Object.keys(packageContent.dependencies).forEach(function (dep) {
+               if (packages.indexOf(dep) === -1) {
+                   return null; //Nothing to do
+               }
+               //Update the version
+               packageContent.dependencies[dep] = version;
+           });
+       }
+       //Write the package.json file
+       return utils.writeJSON(packagePath, packageContent);
+   });
 });
 
