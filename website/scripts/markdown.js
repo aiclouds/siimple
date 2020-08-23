@@ -1,4 +1,4 @@
-let util = require("./util.js");
+let util = require("./utils/util.js");
 
 //Match regex
 let matchRegex = function (line, sourceRegex, callback) {
