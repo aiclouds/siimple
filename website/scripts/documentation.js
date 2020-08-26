@@ -1,11 +1,12 @@
 let fs = require("fs");
 let path = require("path");
-let markdown = require("../../commons/markdown.js");
-let template = require("../../commons/template.js");
-let virtualFile = require("../../commons/virtual-file.js");
-let util = require("../../commons/util.js");
+let paths = require("../../config/paths.js");
 
-let paths = require("./paths.js");
+let markdown = require("./markdown.js");
+let template = require("./template.js");
+let virtualFile = require("./utils/virtual-file.js");
+let util = require("./utils/util.js");
+
 let tips = {
     "info": "siimple-tip--primary siimple-tip--info",
     "error": "siimple-tip--error siimple-tip--cross",
@@ -34,8 +35,8 @@ let classNames = {
     "inlineCode": "siimple-code"
 };
 
-//Build package files tree
-let buildPackageTree = function (pkgName, pkgPath, items) {
+//Build documentation files tree
+let buildDocumentationTree = function (items) {
     let groups = []; //Initialize groups items
     let currentGroup = null; //Current group
     items.forEach(function (item) {
@@ -48,12 +49,12 @@ let buildPackageTree = function (pkgName, pkgPath, items) {
             currentGroup = groups[groups.length - 1]; //Get current group
             return; //Continue with the next item
         }
-        let file = virtualFile(path.join(pkgPath, "docs", item.page)); //Create the new virtual file
+        let file = virtualFile(path.join(paths.docs, item.page)); //Create the new virtual file
         virtualFile.read(file); //Read virtual file content
         //Build the output filename
         let outputFilePath = path.normalize(path.format({
             "root": "/",
-            "dir": path.join("/", "docs", pkgName, path.dirname(item.page)),
+            "dir": path.join("/", "docs", path.dirname(item.page)),
             "name": path.basename(item.page, path.extname(item.page)),
             "ext": ".html"
         }));
@@ -143,74 +144,60 @@ module.exports = function (config, data) {
     //registerPartials(); //Register handlebars partials
     let pageTemplate = template.page({
         "header": config.header,
-        "body": fs.readFileSync(path.join(paths.layouts, "documentation.html"), "utf8")
+        "body": fs.readFileSync(path.join(paths.websiteLayouts, "documentation.html"), "utf8")
     });
     let compilePageTemplate = function (content) {
         return pageTemplate.replace(/\{\{(?:\s*)(content)(?:\s*)\}\}/g, content);
     };
     //Add data content
-    data["packages"] = {};
-    data["iconsList"] = util.readJSON(path.join(paths.packages, "siimple-icons", "icons.json"));
-    data["iconsCategories"] = util.readJSON(path.join(paths.packages, "siimple-icons", "categories.json"));
-    //Sort icons by name
-    data["iconsList"] = data["iconsList"].sort(function (a, b) {
-        return (a.id < b.id) ? -1 : +1;
-    });
-    data["iconsList"].forEach(function (icon) {
-        let category = data["iconsCategories"][icon.categories];
-        category.count = category.count + 1;
-    });
-    //Build packages
-    Object.keys(config.packages).forEach(function (name) {
-        //Import package info
-        let pkgPath = path.join(paths.packages, config.packages[name]);
-        let package = util.readJSON(path.join(pkgPath, "package.json"));
-        let docsConfig = util.readJSON(path.join(pkgPath, "docs", "config.json")); //Import docs config
-        //delete config.packages[name].folder; //Delete folder key
-        let packageTree = buildPackageTree(name, pkgPath, docsConfig.content); //Build package tree
-        let firstPage = packageTree[0].pages[0]; //Get first page
-        //Add package metadata
-        data.packages[name] = Object.assign({}, {
-            "name": package.name,
-            "version": package.version,
-            "description": package.description,
-            "link": firstPage.link
-        });
-        //Build pages
-        packageTree.forEach(function (group, groupIndex) {
-            //Build each page of the group
-            return group.pages.forEach(function (page, pageIndex) {
-                //Compile page content
-                let pageContentTree = markdown.render(markdown.parse(page.file.content));
-                let pageSidebar = buildPageSidebar(packageTree, groupIndex, pageIndex, docsConfig);
-                let pageBreadcrumb = [
-                    {"title": package.name, "link": firstPage.link},
-                    {"title": group.title, "link": group.link},
-                    {"title": page.title, "link": "#", "active": true}
-                ];
-                //Generate page content
-                let pageContent = template.compile(compilePageTemplate(pageContentTree), {
-                    "package": data.packages[name],
-                    "site": config,
-                    "page": {
-                        "url": page.link,
-                        "title": page.title,
-                        "sidebar": pageSidebar,
-                        "breadcrumb": pageBreadcrumb,
-                        "data": page.file.data
-                    },
-                    "data": data,
-                    "title": "Hello world"
-                });
-                //Update the virtualfile with the new folder and paths
-                let file = Object.assign({}, page.file, {
-                    "dirname": path.join(paths.build, path.dirname(page.link)),
-                    "content": pageContent,
-                    "extname": ".html"
-                });
-                //Write the virtual file
-                virtualFile.write(file);
+    //data["packages"] = {};
+    data["package"] = util.readJSON(paths.package);
+    //Build documentation
+    let docsConfig = util.readJSON(path.join(paths.docs, "config.json")); //Import docs config
+    //delete config.packages[name].folder; //Delete folder key
+    let docsTree = buildDocumentationTree(docsConfig.content); //Build documentation tree
+    let firstPage = docsTree[0].pages[0]; //Get first page
+    //Add package metadata
+    //data.packages[name] = Object.assign({}, {
+    //    "name": package.name,
+    //    "version": package.version,
+    //    "description": package.description,
+    //    "link": firstPage.link
+    //});
+    //Build pages
+    docsTree.forEach(function (group, groupIndex) {
+        //Build each page of the group
+        return group.pages.forEach(function (page, pageIndex) {
+            //Compile page content
+            let pageContentTree = markdown.render(markdown.parse(page.file.content));
+            let pageSidebar = buildPageSidebar(docsTree, groupIndex, pageIndex, docsConfig);
+            let pageBreadcrumb = [];
+            //    {"title": package.name, "link": firstPage.link},
+            //    {"title": group.title, "link": group.link},
+            //    {"title": page.title, "link": "#", "active": true}
+            //];
+            //Generate page content
+            let pageContent = template.compile(compilePageTemplate(pageContentTree), {
+                "package": data["package"], //data.packages[name],
+                "site": config,
+                "page": {
+                    "url": page.link,
+                    "title": page.title,
+                    "sidebar": pageSidebar,
+                    "breadcrumb": pageBreadcrumb,
+                    "data": page.file.data
+                },
+                "data": data,
+                "title": "Hello world"
             });
+            //Update the virtualfile with the new folder and paths
+            let file = Object.assign({}, page.file, {
+                "dirname": path.join(paths.websiteBuild, path.dirname(page.link)),
+                "content": pageContent,
+                "extname": ".html"
+            });
+            //Write the virtual file
+            virtualFile.write(file);
         });
     });
     //Write configuration file
