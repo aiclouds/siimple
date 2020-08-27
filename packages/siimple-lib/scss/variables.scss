@@ -63,7 +63,8 @@ $breakpoint-lg: 1024px !default;
 $breakpoint-xl: 1280px !default;
 
 //Default font variables
-$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
+//WARNING: we are not importing fonts automatically --> use a <link> tag instead
+//$font-url: "https://fonts.googleapis.com/css?family=Roboto:400,700" !default;
 $font-default: "Roboto", sans-serif !default;
 $font-monospace: monospace !default;
 
@@ -89,7 +90,7 @@ $border-radius: 8px !default;
 
 //Default margin values
 $margin-top: 0px !default;
-$margin-bottom: 15px !default;
+$margin-bottom: 16px !default;
 
 //Screen sizes
 $mobile: 600px !default;

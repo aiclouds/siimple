@@ -14,7 +14,8 @@ $body-bg: variables.$white !default;
 $body-color: variables.$dark !default;
 
 //Import font from Google Fonts
-@import url(#{variables.$font-url});
+//DEPRECATED: please use a <link> tag to import your fonts
+//@import url(#{variables.$font-url});
 
 //Default html style
 html {
