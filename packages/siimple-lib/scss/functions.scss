@@ -53,6 +53,11 @@
     @return utils.utils-get(lists.$contents, $name);
 }
 
+//Get a spacing value by name
+@function spacing ($index) {
+    @return utils.utils-get(lists.$spacing, $index);
+}
+
 //Get a gray color
 //Usage: gray("1") or gray("gray1")
 @function gray ($name) {
