@@ -26,5 +26,7 @@
     //Breakpoints
     @include variables-from-list("-breakpoint", lists.$breakpoints);
     @include variables-from-list("-content", lists.$contents);
+    //Spacing
+    @include variables-from-list("-spacing", lists.$spacing);
 }
 
