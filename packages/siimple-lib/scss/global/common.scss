@@ -9,18 +9,14 @@
 
 @use "../variables.scss" as variables;
 
-//Body variables
-$body-bg: variables.$white !default;
-$body-color: variables.$dark !default;
-
 //Import font from Google Fonts
 //DEPRECATED: please use a <link> tag to import your fonts
 //@import url(#{variables.$font-url});
 
 //Default html style
 html {
-    background-color: $body-bg;
-    color: $body-color; //text-color;
+    background-color: variables.$body-bg;
+    color: variables.$body-color; //text-color;
     font-family: variables.$font-default;
     font-weight: variables.$text-weight;
     font-size: variables.$text-size;
