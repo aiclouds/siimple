@@ -9,7 +9,7 @@
 @use "siimple-lib" as siimple;
 
 //Tip variables
-$tip-padding: 20px;
+$tip-padding: 24px;
 $tip-border-width: 40px;
 
 //Tip class
@@ -18,7 +18,7 @@ $tip-border-width: 40px;
     position: relative;
     //width: calc(100% - 25px - 20px - 5px);
     border-left-style: solid;
-    border-left-width: $tip-border-width;
+    border-left-width: 5px; //$tip-border-width;
     border-radius: siimple.$border-radius;
     padding: $tip-padding;
     //padding-top: $tip-padding;
@@ -30,14 +30,23 @@ $tip-border-width: 40px;
     color: siimple.$text-color;
     //line-height: $siimple-default-line-height;
     //Default tip color style
-    background-color: siimple.color("white");
+    background-color: siimple.color("light");
     border-left-color: siimple.color("light");
     //Tip colors
     @each $color in siimple.utils-keys(siimple.$colors) {
         &--#{$color} {
-            background-color: lighten(siimple.color-lighter($color), 8%);
+            //background-color: lighten(siimple.color-lighter($color), 8%);
             border-left-color: siimple.color($color);
         }
+    }
+    //Common tip icons styles
+    &--exclamation,
+    &--question,
+    &--info,
+    &--heart,
+    &--cross,
+    &--check {
+        border-left-width: $tip-border-width;
     }
     //Exclamation tip icon
     &--exclamation::before {
