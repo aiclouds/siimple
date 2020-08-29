@@ -10,11 +10,10 @@ export * from "./elements/Breadcrumb.js";
 export * from "./elements/Btn.js";
 export * from "./elements/Card.js";
 export * from "./elements/List.js";
-export * from "./elements/Menu.js";
+export * from "./elements/Nav.js";
 export * from "./elements/Rule.js";
 export * from "./elements/Spinner.js";
 export * from "./elements/Table.js";
-export * from "./elements/Tabs.js";
 export * from "./elements/Tag.js";
 export * from "./elements/Tip.js";
 
