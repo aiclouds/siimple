@@ -12,7 +12,7 @@
 $table-cell-padding: 15px !default;
 $table-cell-padding-small: 8px !default;
 $table-cell-padding-large: 25px !default;
-$table-cell-sizes: siimple.$columns-values;
+$table-cell-sizes: siimple.$columns;
 $table-colors: (
     "primary": siimple.utils-lighten(siimple.color-lighter("primary"), 15%), 
     "secondary": siimple.utils-lighten(siimple.color-lighter("secondary"), 15%), 
@@ -21,7 +21,7 @@ $table-colors: (
     "error": siimple.utils-lighten(siimple.color-lighter("error"), 10%)
 ) !default;
 $table-cell-border-width: 2px !default;
-$table-cell-border-color: siimple.$gray2 !default;
+$table-cell-border-color: siimple.light("3") !default;
 
 //Table class
 .#{siimple.$prefix}table {
