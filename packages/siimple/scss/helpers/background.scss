@@ -15,10 +15,16 @@
             background-color: siimple.color($color) !important;
         }
     }
-    //Gray colors
-    @each $color in siimple.utils-keys(siimple.$grays) {
+    //Lights colors
+    @each $color in siimple.utils-keys(siimple.$lights) {
         &bg-#{$color} {
-            background-color: siimple.gray($color) !important;
+            background-color: siimple.light($color) !important;
+        }
+    }
+    //Darks colors
+    @each $color in siimple.utils-keys(siimple.$darks) {
+        &bg-#{$color} {
+            background-color: siimple.dark($color) !important;
         }
     }
     //White background color
@@ -27,7 +33,7 @@
     }
     //Transparent background color
     &bg-transparent {
-        background-color: transparent !important;
+        background-color: siimple.$transparent !important;
     }
     //Striped light background
     &bg-striped {
