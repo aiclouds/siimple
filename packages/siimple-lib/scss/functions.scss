@@ -59,10 +59,24 @@
 }
 
 //Get a gray color
+//DEPRECATED: use light or dark instead
 //Usage: gray("1") or gray("gray1")
 @function gray ($name) {
+    @warn "siimple.gray function has been deprecated. Please switch to siimple.light or siimple.dark instead";
     $name: "gray" + utils.utils-replace($name, "gray", "");
     @return utils.utils-get(lists.$grays, $name);
+}
+
+//Get a light color from lights list
+@function light ($name) {
+    $name: "light" + utils.utils-replace($name, "light", "");
+    @return utils.utils-get(lists.$lights, $name);
+}
+
+//Get a dark color from darks list
+@function dark ($name) {
+    $name: "dark" + utils.utils-replace($name, "dark", "");
+    @return utils.utils-get(lists.$darks, $name);
 }
 
 //Get a single icon by name
