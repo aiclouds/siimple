@@ -8,18 +8,37 @@
 
 @use "../variables.scss" as variables;
 
+//DEPRECATED: use lights or darks list instead
 //Gray color palette
 $grays: (
-    "gray0": variables.$gray0,
-    "gray1": variables.$gray1,
-    "gray2": variables.$gray2,
-    "gray3": variables.$gray3,
-    "gray4": variables.$gray4,
-    "gray5": variables.$gray5,
-    "gray6": variables.$gray6,
-    "gray7": variables.$gray7,
-    "gray8": variables.$gray8,
-    "gray9": variables.$gray9
+    "gray0": variables.$light1,
+    "gray1": variables.$light2,
+    "gray2": variables.$light3,
+    "gray3": variables.$light4,
+    "gray4": variables.$light5,
+    "gray5": variables.$dark1,
+    "gray6": variables.$dark2,
+    "gray7": variables.$dark3,
+    "gray8": variables.$dark4,
+    "gray9": variables.$dark5
+) !default;
+
+//Lights color list
+$lights: (
+    "light1": variables.$light1,
+    "light2": variables.$light2,
+    "light3": variables.$light3,
+    "light4": variables.$light4,
+    "light5": variables.$light5
+) !default;
+
+//Darks color list
+$darks: (
+    "dark1": variables.$dark1,
+    "dark2": variables.$dark2,
+    "dark3": variables.$dark3,
+    "dark4": variables.$dark4,
+    "dark5": variables.$dark5
 ) !default;
 
 //Default color palette
@@ -74,5 +93,21 @@ $spacing: (
     "7": 3rem,    //for f.s. of 16px --> 48px
     "8": 4rem,    //for f.s. of 16px --> 64px
     "9": 5rem     //for f.s. of 16px --> 80px
+) !default;
+
+//Default columns values
+$columns: (
+    "1": "8.33%", 
+    "2": "16.66%",
+    "3": "24.99%", 
+    "4": "33.33%",
+    "5": "41.66%", 
+    "6": "49.99%",
+    "7": "58.33%", 
+    "8": "66.66%",
+    "9": "74.99%", 
+    "10": "83.33%",
+    "11": "91.66%", 
+    "12": "99.99%"
 ) !default;
 
