@@ -9,7 +9,7 @@
 @use "siimple-lib" as siimple;
 
 //Rule variables
-$rule-background: siimple.$gray2 !default;
+$rule-background: siimple.light("3") !default;
 $rule-height: 2px !default;
 $rule-margin-top: 15px !default;
 $rule-margin-bottom: 15px !default;

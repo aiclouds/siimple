@@ -9,10 +9,12 @@
 @use "siimple-lib" as siimple;
 
 //Alert global variables
-$alert-padding-top: 20px;
-$alert-padding-bottom: 20px;
-$alert-padding-left: 25px;
-$alert-padding-right: 40px;
+$alert-padding-top: 24px;
+$alert-padding-bottom: 24px;
+$alert-padding-left: 32px;
+$alert-padding-right: 48px;
+$alert-title-font-size: 22px !default;
+$alert-title-margin-bottom: 5px !default;
 
 //Alert class
 .#{siimple.$prefix}alert {
@@ -34,17 +36,17 @@ $alert-padding-right: 40px;
     margin-bottom: siimple.$margin-bottom;
     //Alert title
     &-title {
-        font-size: 20px;
+        font-size: $alert-title-font-size;
         font-weight: bold;
-        margin-bottom: 5px;
-        line-height: 30px;
+        margin-bottom: $alert-title-margin-bottom;
+        //line-height: 30px;
     }
     //Alert close button
     &-close {
         display: block;
         position: absolute;
-        top: 15px;
-        right: 15px;
+        top: 16px;
+        right: 16px;
         width: 16px;
         height: 16px;
         cursor: pointer;
