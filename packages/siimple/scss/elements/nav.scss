@@ -1,0 +1,140 @@
+//
+// siimple - minimal css toolkit for flat and clean websites
+// Under the MIT LICENSE.
+// License:    https://github.com/siimple/siimple/blob/master/LICENSE.md
+// Repository: https://github.com/siimple
+// Website:    https://www.siimple.xyz
+//
+
+@use "siimple-lib" as siimple;
+
+//Tabs variables
+$nav-item-height: 24px !default;
+$nav-item-text-size: 16px !default;
+$nav-item-padding-left: 16px !default;
+$nav-item-padding-right: 16px !default;
+$nav-item-padding-top: 8px !default;
+$nav-item-padding-bottom: 8px !default;
+$nav-tabs-padding: 8px;
+
+//Nav class
+.#{siimple.$prefix}nav {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+    //width: 100%;
+    //margin-top: 0px;
+    margin-bottom: siimple.$margin-bottom;
+    @include siimple.user-select(none);
+    border-radius: siimple.$border-radius;
+    //padding: 0px;
+    //Menu group (hidden in horizontal nav)
+    &-group {
+        display: none;
+        width: 100%;
+        height: 25px;
+        //line-height: 24px;
+        //transition: color 0.3s;
+        font-size: 15px;
+        font-weight: bold;
+        text-decoration: none;
+        color: siimple.utils-lighten(siimple.color("dark"), 40%);
+        margin-bottom: 5px;
+        //Menu group not first margin top
+        &:not(:first-child) {
+            margin-top: 10px;
+        }
+        //Menu group hover
+        &:hover {
+            text-decoration: none !important;
+        }
+    }
+    //Nav item
+    &-item {
+        display: block;
+        //flex-grow: 1;
+        //min-height: $nav-item-height;
+        padding-left: $nav-item-padding-left;
+        padding-right: $nav-item-padding-right;
+        padding-top: $nav-item-padding-top;
+        padding-bottom: $nav-item-padding-bottom;
+        line-height: siimple.$line-height;
+        font-weight: siimple.$weight-bold;
+        //text-align: center;
+        font-size: $nav-item-text-size;
+        color: siimple.color-lighter("dark");
+        //padding-left: $tabs-padding;
+        //padding-right: $tabs-padding;
+        //margin-bottom: -1px;
+        //border: 2px solid transparent;
+        border-radius: siimple.$border-radius;
+        cursor: pointer;
+        text-decoration: none;
+        //transition: color 0.3s;
+        //Active item
+        &--active {
+            //background-color: siimple.color("white");
+            color: siimple.color("primary");
+        }
+        //Hover styles
+        &:not(#{&}--active):hover {
+            transition: all ease 0.3s;
+            text-decoration: none !important;
+            color: siimple.color("primary");
+        }
+    }
+    //Menu divider
+    &-divider {
+        display: none;
+        height: 2px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: siimple.light("light3");
+    }
+    //Tabs style
+    &--tabs {
+        //display: flex;
+        background-color: siimple.color("light");
+        padding: $nav-tabs-padding;
+        //position: relative;
+        //width: 100%;
+        //height: $tabs-height;
+        //font-size: siimple.$text-size;
+        //Tab style for mobile devices
+        @media screen and (max-width: siimple.$mobile) {
+            flex-direction: column;
+        }
+    }
+    &--tabs &-item--active {
+        background-color: siimple.color("white");
+    }
+    //Pills style
+    &--pills &-item--active {
+        background-color: siimple.color("primary");
+        color: siimple.color("white") !important;
+    }
+    //Extend the full width
+    &--fill &-item,
+    &--tabs &-item {
+        flex-grow: 1 !important;
+        text-align: center !important;
+    }
+    //Vertical navigation
+    &--vertical {
+        flex-direction: column;
+    }
+    //Vertical nav --> display group title and divider
+    &--vertical &-group, 
+    &--vertical &-divider {
+        display: block !important;
+    }
+    //Align nav items
+    &--center {
+        justify-content: center;
+    }
+    &--right {
+        justify-content: flex-end;
+    }
+}
+
