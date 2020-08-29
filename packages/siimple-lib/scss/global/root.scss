@@ -21,8 +21,9 @@
     --siimple-white: #{variables.$white};
     --siimple-muted: #{variables.$muted};
     --siimple-black: #{variables.$black};
-    //Gray colors
-    @include variables-from-list("", lists.$grays);
+    //Light and dark colors
+    @include variables-from-list("", lists.$lights);
+    @include variables-from-list("", lists.$darks);
     //Breakpoints
     @include variables-from-list("-breakpoint", lists.$breakpoints);
     @include variables-from-list("-content", lists.$contents);
