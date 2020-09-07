@@ -18,6 +18,10 @@ $radio-circle: 4px;
 //Radio class
 .#{siimple.$prefix}radio {
     display: inline-block;
+    //Disable default appearance of the checkbox
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     width: $radio-width;
     height: $radio-height;
     position: relative;
@@ -25,10 +29,11 @@ $radio-circle: 4px;
     margin: $radio-margin;
     cursor: pointer;
     //Radio outer circle
-    & > label {
+    &:before {
         display: block;
         width: calc(#{$radio-width} - 2 * #{$radio-border});
         height: calc(#{$radio-height} - 2 * #{$radio-border});
+        content: "";
         position: absolute;
         top: 0px;
         left: 0px;
@@ -40,7 +45,7 @@ $radio-circle: 4px;
         cursor: pointer;
     }
     //Radio inner circle
-    & > label:after {
+    &:after {
         position: absolute;
         display: block;
         content: "";
@@ -52,27 +57,27 @@ $radio-circle: 4px;
         left: calc(50% - #{$radio-circle} / 2);
         //transition: all 0.3s ease;
     }
-    &:hover > label:after {
+    &:hover:after {
         background-color: siimple.color("light");
     }
-    //Hide radio input
-    & input[type=radio] {
-        visibility: hidden;
-    }
-    //Checked -> change tick
-    & input[type=radio]:checked + label:after {
+    //Checked -> change inner background
+    &:checked:after,
+    &--active:after {
         background-color: siimple.color("primary");
     }
-    //Checked -> change background
-    & input[type=radio]:checked + label {
+    //Checked -> change outer circle
+    &:checked:before,
+    &--active:before {
         border-color: siimple.color("primary");
     }
     //Radio colors
     @each $color in siimple.utils-keys(siimple.$status-colors) {
-        &--#{$color} input[type=radio]:checked + label:after {
+        &--#{$color}:checked:after,
+        &--#{$color}#{&}--active:after {
             background-color: siimple.color($color);
         }
-        &--#{$color} input[type=radio]:checked + label {
+        &--#{$color}:checked:before,
+        &--#{$color}#{&}--active:before {
             border-color: siimple.color($color);
         }
     }

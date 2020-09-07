@@ -17,64 +17,55 @@ $checkbox-border-radius: 3px;
 //Checkbox class
 .#{siimple.$prefix}checkbox {
     display: inline-block;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
     position: relative;
     width: $checkbox-width;
     height: $checkbox-height;
     margin: $checkbox-margin;
     vertical-align: top;
-    //Checkbox label
-    & label {
-        width: $checkbox-width;
-        height: $checkbox-height;
-        cursor: pointer;
-        //transition: all 0.3s;
+    cursor: pointer;
+    border-radius: $checkbox-border-radius;
+    background: siimple.color("light");
+    //Label icon
+    //Check icon for checked status
+    //Minus icon for indeterminate status
+    &:after {
+        content: "";
+        width: 8px;
+        height: 4px;
         position: absolute;
-        top: 0;
-        left: 0;
-        border-radius: $checkbox-border-radius;
-        background: siimple.color("light");
-        //Label icon
-        //Check icon for checked status
-        //Minus icon for indeterminate status
-        &:after {
-            content: "";
-            width: 8px;
-            height: 4px;
-            position: absolute;
-            background: transparent;
-        }
-    }
-    //Input style
-    & input[type=checkbox] {
-        visibility: hidden;
-    }
-    //Checked -> change tick
-    & input[type=checkbox]:checked + label:after {
-        //opacity: 1;
-        transform: rotate(-45deg);
-        border-left: 2px solid siimple.color("white");
-        border-bottom: 2px solid siimple.color("white");
-        top: 5px;
-        left: 4px;
+        background: transparent;
     }
     //Checked/Indeterminate -> change background
-    & input[type=checkbox]:checked + label,
-    & input[type=checkbox]:indeterminate + label {
+    &:checked,
+    &--active,
+    &:indeterminate {
         background-color: siimple.color("primary");
         transition: background-color 0.3s;
     }
-    //Indeterminate -> change tick
-    & input[type=checkbox]:indeterminate + label:after {
-        //opacity: 1;
+    //Indeterminate-> change tick
+    &:indeterminate:after {
         border-bottom: 2px solid siimple.color("white");
-        //transform: rotate(0);
         top: 4px;
         left: 5px;
     }
+    //Checked --> display tick
+    &:checked:after,
+    &--active:after {
+        //opacity: 1;
+        top: 4px;
+        left: 4px;
+        transform: rotate(-45deg);
+        border-left: 2px solid siimple.color("white");
+        border-bottom: 2px solid siimple.color("white");
+    }
     //Checkbox colors
     @each $color in siimple.utils-keys(siimple.$status-colors) {
-        &--#{$color} input[type=checkbox]:checked + label,
-        &--#{$color} input[type=checkbox]:indeterminate + label {
+        &--#{$color}:checked,
+        &--#{$color}#{&}--active,
+        &--#{$color}:indeterminate {
             background-color: siimple.color($color);
         }
     }
