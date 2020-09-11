@@ -1,0 +1,72 @@
+@use "siimple-lib" as siimple;
+
+//Root style
+.root {
+    //max-width: 650px;
+    //margin-left: auto;
+    //margin-right: auto;
+}
+//Icons count
+.count {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+//Icons wrapper
+.icons {
+    display: flex;
+}
+//Icon style
+.icon {
+    display: inline-block;
+    width: 12.5%;
+    color: siimple.dark("1");
+    text-align: center;
+    border-radius: 5px;
+    transition: all 0.3s;
+    padding-top: 5px;
+    cursor: pointer;
+    &:hover {
+        color: siimple.color("primary");
+        background-color: siimple.light("2");
+    }
+    //Icon preview
+    &Preview {
+        height: 50px;
+        //line-height: 50px;
+        //font-size: 50px !important;
+        &::before {
+            box-sizing: inherit;
+        }
+    }
+    //Icon name
+    &Name {
+        //min-height: 30px;
+        //line-height: 30px;
+        font-size: 12px;
+        color: siimple.dark("1") !important;
+        padding-top: 10px;
+        padding-bottom: 6px;
+        opacity: 0.7;
+    }
+}
+@media (max-width: 544px) {
+    .icon {
+        width: 50% !important;
+    }
+}
+////Empty icons list
+//&-empty {
+//    display: block;
+//    padding-top: 50px;
+//    padding-bottom: 50px;
+//    padding-left: 20px;
+//    padding-right: 20px;
+//    background-color: siimple.gray("1");
+//    &-title {
+//        font-size: 20px;
+//        font-weight: 600;
+//        margin-bottom: 5px;
+//    }
+//}
+//
