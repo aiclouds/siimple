@@ -1111,6 +1111,20 @@
         "unicode": 57502,
         "added": "v0.1.0",
         "keywords": ["basket","shop","market"]
+    },
+    {
+        "id": "tools",
+        "categories": "misc",
+        "unicode": 57503,
+        "added": "v0.1.0",
+        "keywords": ["tools"]
+    },
+    {
+        "id": "thumbtack",
+        "categories": "office",
+        "unicode": 57504,
+        "added": "v0.1.0",
+        "keywords": ["pin"]
     }
 ]
 
