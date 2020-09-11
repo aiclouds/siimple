@@ -1,0 +1,23 @@
+[
+    {
+        "title": "Modular",
+        "icon": "box",
+        "content": "<strong>siimple</strong> is built using SASS/SCSS, so you can import only the css elements that you really need!"
+    },
+    {
+        "title": "Responsive",
+        "icon": "mobile",
+        "content": "Design a web page that looks great on all devices such as desktops, tablets and phones."
+    },
+    {
+        "title": "Elegant",
+        "icon": "palette",
+        "content": "<strong>siimple</strong> combines an elegant, modern, flat and minimalistic style designed with simplicity in mind."
+    },
+    {
+        "title": "Easy to learn",
+        "icon": "book",
+        "content": "<strong>siimple</strong> is so intuitive, so you can learn it and start building your amazing website in minutes."
+    }
+]
+

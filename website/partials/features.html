@@ -1,18 +1,18 @@
 <div class="siimple-content siimple-content--large siimple--pt-9">
-    <div class="siimple siimple siimple-h2 siimple--mb-1 siimple--text-normal" align="center">
-        Why <strong class="siimple--text-secondary">siimple</strong> is awesome?
+    <div class="siimple siimple siimple-h2 siimple--mb-1" align="center">
+        Why <strong>siimple</strong> is awesome?
     </div>
     <div class="siimple-lead siimple--mb-7 siimple--text-normal" align="center">
         Style your website interface using a <strong>clean, flat and minimalistic style</strong>.
     </div>
     <div class="siimple-row">
         {{#each data.features }}
-        <div class="siimple-column siimple-column--4 siimple-column--sm-12">
-            <div class="siimple-media siimple--mb-0">
-                <div class="siimple-media-start siimple--px-2">
-                    <img src="{{this.image}}" width="50px" />
+        <div class="siimple-column siimple-column--3 siimple-column--sm-12">
+            <div class="siimple-card">
+                <div class="siimple-card-content">
+                    <div class="website-icon-small siimple--bg-primary siimple-icon siimple-icon-{{ this.icon }}"></div>
                 </div>
-                <div class="siimple-media-content">
+                <div class="siimple-card-content">
                     <div class="siimple-h5 siimple--mt-0 siimple--mb-1">
                         {{ this.title }}
                     </div>

@@ -1,12 +1,12 @@
 <!-- Navbar -->
-<div class="siimple-navbar siimple--bg-light siimple-navbar--large">
+<div class="siimple-navbar siimple--bg-light1 siimple-navbar--large">
     <a class="siimple-navbar-brand siimple--text-primary" href="/index.html">
-        <strong class="siimple">siimple</strong>
+        <strong class="siimple">siimple</strong><span style="font-size:20px;margin-left:4px;">{{subtitle}}</span>
     </a>
     <!-- Navbar toggle -->
     <div class="siimple-navbar-toggle" tabindex="0"></div>
-    <!-- Right menu -->
-    <div class="siimple-navbar-menu">
+    <!-- Navbar content -->
+    <div class="siimple-navbar-content">
         {{#each site.navbarLinks }}
         <div class="siimple-navbar-item">
             <a class="siimple-navbar-link siimple--text-primary {{#startsWith this.startsWith ../page.url}}siimple-navbar-link--active{{/startsWith}}" href="{{this.url}}">{{this.name}}</a>

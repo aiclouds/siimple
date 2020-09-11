@@ -1,0 +1,32 @@
+<div class="siimple-content siimple-content--large siimple--pt-6">
+    <a name="toolkits"></a>
+    <div class="siimple siimple-h2 siimple--mb-1" align="center">
+        Discover our <strong>toolkits</strong>
+    </div>
+    <div class="siimple--mb-7 siimple-lead siimple--text-normal" align="center">
+        We are adding more packages and plugins to the <strong>siimple ecosystem</strong>!
+    </div>
+    <div class="siimple-row siimple--mb-0">
+        {{#each data.toolkits}}
+        <div class="siimple-column siimple-column--4 siimple-column--sm-12">
+            <div class="siimple-card">
+                <div class="siimple-card-content">
+                    <div class="website-icon-small siimple--bg-primary siimple-icon siimple-icon-{{ this.icon }}"></div>
+                </div>
+                <div class="siimple-card-content">
+                    <div class="siimple-h4 siimple--text-normal siimple--mb-1">
+                        <strong class="siimple" style="padding-right:4px;">siimple</strong>{{ this.title }}
+                    </div>
+                    <div class="siimple-paragraph siimple--mb-0" style="opacity:0.8;">{{{ this.content }}}</div>
+                </div>
+                <div class="siimple-card-content">
+                    <a href="{{ this.url }}" class="siimple-btn siimple-btn--block siimple-btn--primary">
+                        <strong>Documentation</strong>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
+

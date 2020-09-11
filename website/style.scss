@@ -1,10 +1,10 @@
 //Import dependencies
 @use "siimple-lib" as siimple;
-@use "siimple/scss/brand.scss" as brand;
+//@use "siimple/scss/brand.scss" as brand;
 
 //Override siimple styles
 .siimple-code {
-    font-size: 85% !important;
+    font-size: 90% !important;
     line-height: 1.5 !important;
     //padding: 0px !important;
     //font-weight: normal !important;
@@ -16,6 +16,12 @@
     white-space: nowrap !important;
 }
 
+//Override html tag styles
+html {
+    background-color: siimple.$light1 !important;
+    //background-color: siimple.$white !important;
+}
+
 //Website hero component
 .website-hero {
     display: block;
@@ -24,15 +30,16 @@
     //padding-bottom: 20px;
 }
 .website-hero-content {
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .website-hero-head {
-    font-size: 65px;
-    line-height: 90px;
+    font-size: 96px;
+    line-height: 1;
     color: siimple.color("primary");
 }
 .website-hero-subhead {
+    display: none;
     font-size: 40px;
     line-height: 50px;
     //opacity: 0.8;
@@ -40,11 +47,27 @@
     color: siimple.color("primary");
 }
 .website-hero-text {
-    font-size: 18px;
-    line-height: 27px;
+    font-size: 24px;
+    line-height: 1.5;
     margin-bottom: 10px;
     color: siimple.color("primary");
     //opacity: 0.8;
+}
+
+//Website icons
+.website-icon-small,
+.website-icon-large {
+    //background-color: siimple.color("primary");
+    color: #ffffff !important;
+    border-radius: 50%;
+}
+.website-icon-large {
+    font-size: 40px;
+    padding: 15px;
+}
+.website-icon-small {
+    font-size: 32px;
+    padding: 10px;
 }
 
 //Snippet
@@ -57,7 +80,7 @@
     margin-top: 20px;
 }
 .website-snippet-demo { 
-    background-color: siimple.color("white");
+    //background-color: siimple.color("white");
     //border-radius: siimple.$border-radius;
     overflow: scroll;
     //padding: 10px;
@@ -75,4 +98,12 @@
     //margin-bottom: 0px !important;
 }
 
+//Website menu
+.website-menu {
+    background-color: transparent !important;
+    //Add padding on desktop devices
+    @media screen and (min-width: siimple.$mobile) {
+        padding-right: 44px;
+    }
+}
 

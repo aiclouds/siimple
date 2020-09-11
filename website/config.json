@@ -5,6 +5,7 @@
         ["meta", {"name":"viewport", "content": "width=device-width,initial-scale=1"}],
         ["link", {"rel": "stylesheet", "href": "/assets/style.css"}],
         ["link", {"rel": "stylesheet", "href": "/assets/siimple.min.css"}],
+        ["link", {"rel": "stylesheet", "href": "/assets/siimple-experiments.min.css"}],
         ["link", {"rel": "stylesheet", "href": "/assets/siimple-icons.min.css"}]
     ],
     "packages": {
@@ -12,12 +13,12 @@
         "icons": "siimple-icons"
     },
     "navbarLinks": [
-        {"name": "Toolkits", "url": "/index.html#toolkits", "startsWith": "/toolkits"},
-        {"name": "Docs", "url": "/docs/", "startsWith": "/docs"}
+        {"name": "Docs", "url": "/docs/", "startsWith": "/docs"},
+        {"name": "Icons", "url": "/icons.html", "startsWith": "/icons"}
     ],
     "footerLinks": [
-        {"name": "GitHub", "url": "https://github.com/siimple/siimple"},
-        {"name": "Twitter", "url": "https://twitter.com/siimplecss"},
-        {"name": "Report a bug", "url": "https://github.com/siimple/siimple/issues"}
+        {"name": "GitHub", "url": "https://github.com/siimple/siimple", "target": "_blank"},
+        {"name": "Issues", "url": "https://github.com/siimple/siimple/issues", "target": "_blank"},
+        {"name": "Privacy", "url": "/privacy.html", "target": ""}
     ]
 }

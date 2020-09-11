@@ -1,4 +1,4 @@
-# @siimple/website
+# siimple website
 
 This package contains the source code powering [www.siimple.xyz](https://www.siimple.xyz).
 
