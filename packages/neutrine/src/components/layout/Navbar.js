@@ -41,8 +41,7 @@ Navbar.defaultProps = {
 //Navbar brand element
 export const NavbarBrand = htmlElement("div", "siimple-navbar-brand");
 export const NavbarItem = htmlElement("div", "siimple-navbar-item");
-export const NavbarLink = htmlElement("div", "siimple-navbar-link");
-export const NavbarMenu = htmlElement("div", "siimple-navbar-menu");
+export const NavbarContent = htmlElement("div", "siimple-navbar-content");
 
 //Navbar toggle component
 export const NavbarToggle = function (props) {
