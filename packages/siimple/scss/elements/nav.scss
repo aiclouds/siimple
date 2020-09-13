@@ -104,7 +104,15 @@ $nav-tabs-padding: 8px;
         //Tab style for mobile devices
         @media screen and (max-width: siimple.$mobile) {
             flex-direction: column;
+            margin-right: 0px;
         }
+    }
+    //Tabs item
+    &--tabs &-item:not(:last-child) {
+        margin-right: 10px;
+    }
+    &--tabs &-item:not(#{&}-item--active):hover {
+        background-color: rgba(siimple.color("white"), 0.4);
     }
     &--tabs &-item--active {
         background-color: siimple.color("white");
@@ -123,6 +131,7 @@ $nav-tabs-padding: 8px;
     //Vertical navigation
     &--vertical {
         flex-direction: column;
+        margin-right: 0px;
     }
     //Vertical nav --> display group title and divider
     &--vertical &-group, 
