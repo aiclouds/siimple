@@ -9,10 +9,10 @@
 @use "siimple-lib" as siimple;
 
 //Footer variables
-$footer-background: siimple.gray("0") !default;
+$footer-background: siimple.light("1") !default;
 $footer-padding-top: 40px !default;
 $footer-padding-bottom: 80px !default;
-$footer-text-size: 14px;
+//$footer-text-size: 14px;
 //$footer-line-height: 20px;
 $footer-color: siimple.$muted !default;
 
@@ -21,7 +21,7 @@ $footer-color: siimple.$muted !default;
     display: block;
     padding-top: $footer-padding-top;
     padding-bottom: $footer-padding-bottom;
-    font-size: $footer-text-size;
+    //font-size: $footer-text-size;
     //line-height: $footer-line-height;
     background-color: $footer-background;
     color: $footer-color;
