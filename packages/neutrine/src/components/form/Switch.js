@@ -1,23 +1,32 @@
 import React from "react";
-import {randomString} from "../../utils/string.js";
+import {htmlElement} from "../../utils/reactElements.js";
 import {classNames} from "../../utils/classnames.js";
 import {filterProps} from "../../utils/reactProps.js";
 
-//Switch component
+//Switch component 
 export const Switch = React.forwardRef(function (props, ref) {
-    let inputProps = filterProps(props, ["style", "id", "className", "ref"]);
-    inputProps.type = "checkbox";
-    inputProps.id = (typeof props.id === "string") ? props.id : randomString();
-    inputProps.ref = ref;
-    //Switch children content
-    let inputChild = React.createElement("input", inputProps, null);
-    let labelChild = React.createElement("label", {"htmlFor": inputProps.id}, null);
-    //Generate the switch props
-    let switchProps = {
-        "className": classNames("siimple-switch", props.className),
-        "style": props.style
-    };
+    let inputProps = filterProps(props, ["className"]); //Filter props
     //Return the switch element
-    return React.createElement("div", switchProps, inputChild, labelChild);
+    return React.createElement("input", Object.assign(inputProps, {
+        "className": classNames("siimple-switch", props.className),
+        "type": "checkbox",
+        "ref": ref
+    }));
 });
+
+//Fake switch
+export function FakeSwitch (props) {
+    let newProps = filterProps(props, ["active", "className"]);
+    newProps.className = classNames(props.className, {
+        "siimple-switch": true,
+        "siimple-switch--active": props.active
+    });
+    //Return the fake switch element
+    return React.createElement("div", newProps);
+}
+
+//Fake switch props
+FakeSwitch.defaultprops = {
+    "active": false
+};
 
