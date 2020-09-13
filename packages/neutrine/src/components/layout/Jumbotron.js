@@ -16,6 +16,10 @@ export const Jumbotron = function (props) {
     if (typeof props.size === "string") {
         classList.push("siimple-jumbotron--" + props.size.toLowerCase());
     }
+    //Check the jumbotron fullheight
+    if (props.fullheight === true) {
+        classList.push("siimple-jumbotron--fullheight");
+    }
     //Generate the jumbotron classname
     newProps.className = classNames(classList, props.className);
     //Return the parent div
@@ -25,7 +29,8 @@ export const Jumbotron = function (props) {
 //Jumbotron default props
 Jumbotron.defaultProps = {
     "color": null, 
-    "size": null
+    "size": null,
+    "fullheight": false
 };
 
 //Other jumbotron components
