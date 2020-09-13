@@ -1,4 +1,5 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="../dist/siimple.css">
 
 <!-- Main layout -->
@@ -9,19 +10,18 @@
             <strong>Blog template</strong>
         </div>
         <!-- Navbar toggle -->
-        <div class="siimple-navbar-toggle" tabindex="0">
-            <div class="siimple-navbar-icon"></div>
-        </div>
-        <!-- Right menu -->
-        <div class="siimple-navbar-menu">
-            <div class="siimple-navbar-item">
-                <div class="siimple-navbar-link">Link 1</div>
-            </div>
-            <div class="siimple-navbar-item">
-                <div class="siimple-navbar-link">Link 2</div>
-            </div>
-            <div class="siimple-navbar-item">
-                <div class="siimple-navbar-link">Link 3</div>
+        <!--
+        <div class="siimple-navbar-toggle" tabindex="0"></div>
+        -->
+        <input type="checkbox" class="siimple-navbar-toggle" />
+        <!-- Navbar contentu -->
+        <div class="siimple-navbar-content">
+            <a class="siimple-navbar-item" href="#">Link 1</a>
+            <a class="siimple-navbar-item" href="#">Link 2</a>
+            <a class="siimple-navbar-item" href="#">Link 3</a>
+            <div class="siimple--flex">
+                <input type="text" class="siimple-input siimple-input--fluid siimple--bg-white" placeholder="Search..." />
+                <div class="siimple-btn siimple-btn--primary siimple-bt--small siimple--ml-2">Search</div>
             </div>
         </div>
     </div>
@@ -43,19 +43,18 @@
         <!-- Grid row -->
         <div class="siimple-row">
             <div class="siimple-column siimple-column--3 siimple-column--sm-hide">
-                <div class="siimple-menu">
-                    <div class="siimple-menu-group">CATEGORIES</div>
-                    <a class="siimple-menu-item">My favourite books</a>
-                    <a class="siimple-menu-item">TV and magazines</a>
-                    <a class="siimple-menu-item siimple-menu-item--active">Photos and illustrations</a>
-                    <a class="siimple-menu-item">Music and videos</a>
-                </div>
-                <div class="siimple-menu">
-                    <div class="siimple-menu-group">RELATED LINKS</div>
-                    <div class="siimple-menu-item">My instagram profile</div>
-                    <div class="siimple-menu-item">My Youtube channel</div>
-                    <div class="siimple-menu-divider"></div>
-                    <div class="siimple-menu-item">Photos of my last trip</div>
+                <div class="siimple-nav siimple-nav--vertical siimple--p-3 siimple--bg-light">
+                    <div class="siimple-nav-group">CATEGORIES</div>
+                    <a class="siimple-nav-item">My favourite books</a>
+                    <a class="siimple-nav-item">TV and magazines</a>
+                    <a class="siimple-nav-item siimple-nav-item--active">Photos and illustrations</a>
+                    <a class="siimple-nav-item">Music and videos</a>
+                    <div class="siimple-nav-divider"></div>
+                    <div class="siimple-nav-group">RELATED LINKS</div>
+                    <div class="siimple-nav-item">My instagram profile</div>
+                    <div class="siimple-nav-item">My Youtube channel</div>
+                    <div class="siimple-nav-divider"></div>
+                    <div class="siimple-nav-item">Photos of my last trip</div>
                 </div>
             </div>
             <div class="siimple-column siimple-column--9 siimple-column--sm-12">
