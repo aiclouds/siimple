@@ -16,7 +16,7 @@ $btn-padding-bottom: 8px;
 
 //Button class
 .#{siimple.$prefix}btn {
-    display: inline-flex; //inline-block;
+    display: inline-block;
     //min-height: 24px;
     //transition: opacity 0.3s;
     //transition: background-color 0.3s;
@@ -38,12 +38,12 @@ $btn-padding-bottom: 8px;
     @include siimple.user-select(none);
     //Default button style
     color: siimple.$text-color;
-    background-color: siimple.color("white");
+    background-color: siimple.gray("1");
     //Button hover style
     &:hover {
         text-decoration: none;
         //opacity: 0.8;
-        background-color: siimple.color("light");
+        background-color: siimple.gray("3");
         transition: background-color 0.3s;
     }
     //Button colors
@@ -82,8 +82,10 @@ $btn-padding-bottom: 8px;
         font-size: siimple.$text-size-large;
         //line-height: 30px;
     }
-    //Fluid button
-    &--fluid {
+    //Block button
+    &--fluid,
+    &--block {
+        display: block;
         width: 100%;
         padding-left: 0px !important;
         padding-right: 0px !important;
