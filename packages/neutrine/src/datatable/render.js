@@ -1,6 +1,6 @@
 import React from "react";
 import {Table, TableHeader, TableBody, TableRow, TableCell} from "../components/elements/Table.js";
-import {Check} from "../components/future/Check/index.js";
+import {FakeCheckbox as Check} from "../components/form/Checkbox.js";
 import {classNames} from "../utils/classnames.js";
 import {findClassInNodeList} from "../utils/dom.js";
 import {DataTableConst} from "./const.js";
@@ -100,7 +100,7 @@ export function DataTableRender (props) {
             if (cell.selectable === true) {
                 //Display a checkbox component
                 cellContent = React.createElement(Check, {
-                    "checked": cell.selected
+                    "active": cell.selected
                 });
                 //Add a custom cell style
                 cellClassList.push(DataTableConst.selectableCellClass);
