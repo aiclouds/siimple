@@ -9,11 +9,13 @@
 @use "siimple-lib" as siimple;
 
 //Navbar variables
-$navbar-height: 40px;
-$navbar-padding: 15px;
-$navbar-breakpoint-desktop: siimple.$desktop;
-$navbar-breakpoint-mobile: siimple.$desktop - 1px;
-$navbar-item-padding: 10px;
+$navbar-height: 40px !default;
+$navbar-padding: 24px !default;
+$navbar-breakpoint-desktop: siimple.$desktop !default;
+$navbar-breakpoint-mobile: siimple.$desktop - 1px !default;
+$navbar-item-padding: 10px !default;
+$navbar-item-margin: 10px !default;
+$navbar-brand-font-size: 22px !default;
 
 //Navbar class
 .#{siimple.$prefix}navbar {
@@ -37,7 +39,7 @@ $navbar-item-padding: 10px;
     color: siimple.$text-color;
     //Common navbar brand and navbar link styles
     &-brand,
-    &-link {
+    &-item {
         display: block;
         //height: 34px;
         height: $navbar-height;
@@ -50,17 +52,18 @@ $navbar-item-padding: 10px;
     //Navbar brand (previous navbar-title)
     &-brand {
         //font-weight: bold;
-        font-size: 18px;
+        font-size: $navbar-brand-font-size;
         margin-right: 10px;
         color: siimple.$text-color;
         //transition: all 0.3s;
     }
-    //Navbar link
-    &-link {
+    //Navbar item
+    &-item {
         display: block;
         //text-align: center;
         //font-weight: bold;
         font-size: siimple.$text-size;
+        font-weight: siimple.$weight-medium;
         //transition: opacity 0.3s;
         opacity: 0.6;
         color: siimple.$text-color; //Default text color
@@ -72,7 +75,7 @@ $navbar-item-padding: 10px;
         }
         //Navbar link active
         &--active {
-            font-weight: bold;
+            font-weight: siimple.$weight-bold;
             opacity: 1.0 !important;
         }
         //Navbar link disabled
@@ -84,16 +87,25 @@ $navbar-item-padding: 10px;
     }
     //Styles for desktop
     @media screen and (min-width: $navbar-breakpoint-desktop) {
-        //Menu navbar
-        &-menu {
+        //Navbar content
+        &-content {
             display: flex;
             flex-grow: 1;
             justify-content: flex-end; //Right aligned
         }
-        //Menu item
+        //Navigation item
         &-item {
             padding-left: $navbar-item-padding;
             padding-right: $navbar-item-padding;
+            //margin-right: $navbar-item-margin-right;
+        }
+        //Next item of the navbar content with no the item class
+        &-item + *:not(#{&}-item) {
+            margin-left: $navbar-item-margin;
+        }
+        //Previous item of the navbar content with no the item class
+        *:not(#{&}-item) + &-item {
+            margin-left: $navbar-item-margin;
         }
         //Navbar toggle
         &-toggle {
@@ -102,8 +114,8 @@ $navbar-item-padding: 10px;
     }
     //Styles for mobile devices
     @media screen and (max-width: $navbar-breakpoint-mobile) {
-        //Menu navbar for mobile devices
-        &-menu {
+        //Navbar content for mobile devices
+        &-content {
             display: block;
             width: 100%;
             max-height: 0px;
@@ -113,6 +125,15 @@ $navbar-item-padding: 10px;
         //Menu items
         &-item {
             padding-top: $navbar-item-padding;
+            //padding-bottom: $navbar-item-padding;
+        }
+        //Next item of the navbar content with no the item class
+        &-item + *:not(#{&}-item) {
+            margin-top: $navbar-item-margin;
+        }
+        //Previous item of the navbar content with no the item class
+        *:not(#{&}-item) + &-item {
+            margin-top: $navbar-item-margin;
         }
         //Navbar toggle
         &-toggle {
@@ -122,6 +143,10 @@ $navbar-item-padding: 10px;
             height: 30px;
             //outline: 0;
             cursor: pointer;
+            //Disable apperance for checkbox toggles
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
         }
         //Toggle icon
         &-toggle::before {
@@ -141,8 +166,10 @@ $navbar-item-padding: 10px;
             background-color: siimple.color("dark");
             top: 13px;
         }
-        //Toggle focus --> display navbarmenu
-        &-toggle:focus + &-menu {
+        //Toggle focus --> display navbar content
+        &-toggle:not(input):focus + &-content,
+        &-toggle:checked + &-content,
+        &--expand &-content {
             display: block !important;
             max-height: 100vh;
         }
@@ -194,7 +221,7 @@ $navbar-item-padding: 10px;
             color: siimple.color-invert($color);
         }
         //Links and brand colors
-        &--#{$color} &-link,
+        &--#{$color} &-item,
         &--#{$color} &-brand {
             color: siimple.color-invert($color);
         }
