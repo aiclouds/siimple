@@ -17,8 +17,12 @@ $jumbotron-subtitle-line-height: 30px;
 
 //Jumbotron class
 .#{siimple.$prefix}jumbotron {
-    display: block;
+    display: flex;
+    //display: block;
     //font-family: $siimple-default-text-font;
+    //justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
     padding-top: $jumbotron-padding;
     padding-bottom: $jumbotron-padding;
     color: siimple.$text-color;
@@ -43,6 +47,15 @@ $jumbotron-subtitle-line-height: 30px;
     }
     &-title + &-subtitle {
         margin-top: 8px;
+    }
+    //Jumbotron full height
+    &--fullheight {
+        min-height: 100vh;
+        //display: flex;
+        //align-items: center;
+        justify-content: center;
+        //flex-direction: column;
+        padding: 0px;
     }
     //Colored jumbotron
     @each $color in siimple.utils-keys(siimple.$colors) {
