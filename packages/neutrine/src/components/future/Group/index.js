@@ -11,7 +11,7 @@ export const Group = htmlElement("div", "siimple__group");
 export const GroupTitle = htmlElement("div", "siimple__group-title");
 export const GroupDescription = htmlElement("div", "siimple__group-description");
 export const GroupText = htmlElement("div", "siimple__group-text");
-export const GroupAction = htmlElement("div", "siimple__group-action");
+//export const GroupAction = htmlElement("div", "siimple__group-action");
 
 //Main group container
 export const GroupRow = function (props) {
@@ -58,7 +58,8 @@ GroupColumn.defaultProps = {
 
 //Group icon
 export const GroupIcon = function (props) {
-    return mergeElement(Icon, props, {
+    let iconProps = filterProps(props, ["appearance", "color"]);
+    return mergeElement(Icon, iconProps, {
         "style": {
             "lineHeight": "40px"
         },
@@ -101,5 +102,10 @@ export const GroupAdd = function (props) {
         "className": "siimple__group-add",
         "icon": "plus"
     });
+};
+
+//Group action
+export const GroupAction = function (props) {
+    return mergeElement(Icon, props, {"className": "siimple__group-action"});
 };
 
