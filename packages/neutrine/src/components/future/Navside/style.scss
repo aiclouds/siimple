@@ -1,0 +1,22 @@
+@use "siimple-lib" as siimple;
+
+//navside variables
+$navside-prefix: "siimple__navside";
+$navside-padding: 24px !default;
+$navside-width: 260px !default;
+$navside-height: 100vh !default;
+
+//Navside style
+.#{$navside-prefix} {
+    display: flex;
+    flex-direction: column;
+    width: calc(#{$navside-width} - 2 * #{$navside-padding});
+    height: calc(#{$navside-height} - 2 * #{$navside-padding});
+    padding: $navside-padding;
+    background-color: siimple.$white;
+    position: sticky;
+    top: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
