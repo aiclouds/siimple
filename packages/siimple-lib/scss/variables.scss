@@ -6,9 +6,6 @@
 // Website:    https://www.siimple.xyz
 //
 
-//Import dependencies
-@use "./themes/default.scss" as theme;
-
 //Default class prefix
 $name: "siimple" !default;
 $prefix: $name + "-" !default;
@@ -19,28 +16,30 @@ $darker-amount: 20% !default;
 $lighter-amount: 20% !default;
 
 //Light color palette
-$light1: theme.$light1 !default; //#f6f6f9 !default;
-$light2: theme.$light2 !default; //#edeff3 !default;
-$light3: theme.$light3 !default; //#e1e5ea !default;
-$light4: theme.$light4 !default; //#cbd1d7 !default;
-$light5: theme.$light5 !default; //#abb3ba !default;
+//https://coolors.co/f5f5f5-ebebeb-e0e0e0-d6d6d6-cccccc
+$light1: #f5f5f5 !default; //#f6f6f9 !default;
+$light2: #ebebeb !default; //#edeff3 !default;
+$light3: #e0e0e0 !default; //#e1e5ea !default;
+$light4: #d6d6d6 !default; //#cbd1d7 !default;
+$light5: #cccccc !default; //#abb3ba !default;
 
 //Dark color palette
-$dark1: theme.$dark1 !default; //#6a727c !default;
-$dark2: theme.$dark2 !default; //#58606a !default;
-$dark3: theme.$dark3 !default; //#434c56 !default;
-$dark4: theme.$dark4 !default; //#2f363d !default;
-$dark5: theme.$dark5 !default; //#24292e !default;
+//https://coolors.co/49495a-40404f-373743-2e2e38-25252d
+$dark1: #49495a !default; //#6a727c !default;
+$dark2: #40404f !default; //#58606a !default;
+$dark3: #373743 !default; //#434c56 !default;
+$dark4: #2e2e38 !default; //#2f363d !default;
+$dark5: #25252d !default; //#24292e !default;
 
 //Default colors
-$primary: theme.$primary !default;
-$secondary: theme.$secondary !default;
-$success: theme.$success !default;
-$warning: theme.$warning !default;
-$error: theme.$error !default;
-$light: theme.$light !default;
-$muted: theme.$muted !default;
-$dark: theme.$dark !default;
+$primary: #4e91e4 !default;
+$secondary: #4ccdac !default;
+$success: #4acf7f !default;
+$warning: #fbc850 !default;
+$error: #ee675d !default; 
+$muted: $dark1 !default; 
+$light: $light2 !default;
+$dark: $dark4 !default;
 
 //Basic colors
 $white: #ffffff !default;
@@ -105,6 +104,6 @@ $mobile: 600px !default;
 $desktop: 1024px !default;
 
 //Body variables
-$body-bg: $light1 !default;
+$body-bg: $white !default;
 $body-color: $text-color !default;
 
